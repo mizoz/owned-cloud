@@ -62,8 +62,10 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="card-panel space-y-5">
       <div>
-        <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted)]">Send project details</p>
-        <h2 className="mt-3 text-3xl font-semibold text-[var(--ink-strong)]">Tell us where the friction is</h2>
+        <p className="eyebrow text-[var(--text-muted)]">Send project details</p>
+        <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">
+          Tell us where the friction is
+        </h2>
       </div>
 
       <input
@@ -156,7 +158,7 @@ export function ContactForm() {
           {status === "loading" ? "Sending..." : "Request Consultation"}
         </button>
         {message ? (
-          <p className={`text-sm ${status === "error" ? "text-red-700" : "text-[var(--accent-strong)]"}`}>
+          <p className={`text-sm ${status === "error" ? "text-red-700" : "text-[var(--secondary)]"}`}>
             {message}
           </p>
         ) : null}
@@ -176,7 +178,7 @@ function Field({
 }) {
   return (
     <label className="block">
-      <span className="mb-2 block text-sm font-medium text-[var(--ink)]">
+      <span className="mb-2 block text-sm font-medium text-[var(--text)]">
         {label}
         {required ? " *" : ""}
       </span>

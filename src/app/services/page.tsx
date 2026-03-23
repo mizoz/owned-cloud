@@ -1,6 +1,7 @@
 import { CallToAction } from "@/components/CallToAction";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 
 const serviceTiers = [
@@ -45,37 +46,48 @@ const serviceTiers = [
 
 export default function ServicesPage() {
   return (
-    <main className="min-h-screen bg-[var(--surface)] text-[var(--ink)]">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--text)]">
       <SiteHeader />
-      <Container className="py-18 lg:py-24">
-        <SectionHeading
-          eyebrow="Services"
-          title="Three ways we help Calgary businesses simplify their tech"
-          description="Start with a tightly scoped win, then expand only when the system is proving its value."
-        />
+      <section className="hero-shell px-6 pb-16 pt-24 lg:px-12">
+        <Container className="max-w-7xl">
+          <SectionHeading
+            eyebrow="Automation Packages"
+            title="Three ways to remove operational drag."
+            description="Start with the fixed-scope automation engine, then expand into deeper systems only when the first engagement proves itself."
+          />
+        </Container>
+      </section>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+      <Container className="pb-16 pt-8 lg:pb-24">
+        <div className="grid gap-6 lg:grid-cols-3">
           {serviceTiers.map((tier) => (
             <section
               key={tier.name}
-              className={`card-panel flex h-full flex-col ${tier.featured ? "border-[var(--accent)] shadow-[var(--shadow-strong)]" : ""}`}
+              className={`rounded-xl border p-8 shadow-[var(--shadow-card)] ${
+                tier.featured
+                  ? "border-[var(--primary-strong)] bg-[var(--surface-container-high)]"
+                  : "border-[var(--outline)] bg-[var(--surface-container-lowest)]"
+              }`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
-                  <h2 className="text-2xl font-semibold text-[var(--ink-strong)]">{tier.name}</h2>
-                  <p className="mt-2 text-sm leading-6 text-[var(--muted)]">{tier.summary}</p>
+                  <h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">{tier.name}</h2>
+                  <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{tier.summary}</p>
                 </div>
                 {tier.featured ? (
-                  <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-medium uppercase tracking-[0.16em] text-[var(--accent-strong)]">
-                    Most common
+                  <span className="rounded bg-[var(--secondary-soft)] px-3 py-1 text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--secondary)]">
+                    Most Common
                   </span>
                 ) : null}
               </div>
-              <div className="mt-8 text-4xl font-semibold text-[var(--ink-strong)]">{tier.price}</div>
-              <ul className="mt-8 space-y-4 text-sm text-[var(--ink)]">
+
+              <div className="mt-8 text-5xl font-black tracking-tight text-[var(--primary)]">{tier.price}</div>
+              <ul className="mt-8 space-y-4 text-sm text-[var(--text)]">
                 {tier.features.map((feature) => (
                   <li key={feature} className="flex items-start gap-3">
-                    <span className="mt-1 inline-block h-2.5 w-2.5 rounded-full bg-[var(--accent)]" />
+                    <span className="material-symbols-outlined mt-0.5 text-base text-[var(--secondary)]">
+                      check_circle
+                    </span>
                     <span>{feature}</span>
                   </li>
                 ))}
@@ -84,16 +96,18 @@ export default function ServicesPage() {
           ))}
         </div>
 
-        <div className="mt-14 rounded-[2rem] border border-[var(--line)] bg-white/75 p-8 shadow-[var(--shadow-soft)]">
-          <h3 className="text-2xl font-semibold text-[var(--ink-strong)]">How we scope work</h3>
-          <p className="mt-4 max-w-3xl leading-7 text-[var(--muted)]">
-            We do not sell mystery retainers. We define the bottleneck, agree on the deliverable, build the
-            system, and show you how it performs. If we continue, it is because the first project worked.
+        <div className="mt-14 rounded-xl bg-[var(--surface-container-low)] p-8">
+          <h3 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">How we scope work</h3>
+          <p className="mt-4 max-w-3xl leading-7 text-[var(--text-muted)]">
+            We define the bottleneck, agree on the deliverable, build the system, and show you the outcome.
+            No ambiguous retainer language. No platform theater. If the first project works, then we decide what
+            deserves the next phase.
           </p>
         </div>
       </Container>
 
       <CallToAction />
+      <SiteFooter />
     </main>
   );
 }

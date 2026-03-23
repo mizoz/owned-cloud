@@ -9,11 +9,11 @@ export function SectionHeading({
 }) {
   return (
     <div className="max-w-3xl">
-      <p className="text-sm uppercase tracking-[0.18em] text-[var(--muted)]">{eyebrow}</p>
-      <h2 className="mt-4 text-4xl font-semibold leading-tight text-[var(--ink-strong)] sm:text-5xl">
+      <p className="eyebrow text-[var(--text-muted)]">{eyebrow}</p>
+      <h2 className="mt-4 text-4xl font-extrabold leading-tight tracking-tight text-[var(--primary)] sm:text-5xl">
         {title}
       </h2>
-      <p className="mt-5 text-lg leading-8 text-[var(--muted)]">{description}</p>
+      <p className="mt-5 text-lg leading-8 text-[var(--text-muted)]">{description}</p>
     </div>
   );
 }
