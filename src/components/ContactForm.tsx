@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 type FormState = {
   name: string;
@@ -35,6 +36,7 @@ export function ContactForm() {
     event.preventDefault();
     setStatus("loading");
     setMessage("");
+    trackEvent("contact_form_submit_attempt", { page: "contact" });
 
     try {
       const response = await fetch("/api/contact", {
@@ -53,9 +55,11 @@ export function ContactForm() {
       setStatus("success");
       setMessage("Your request has been sent. We will follow up shortly.");
       setForm(initialState);
+      trackEvent("contact_form_submit_success", { page: "contact" });
     } catch (error) {
       setStatus("error");
       setMessage(error instanceof Error ? error.message : "Unable to send your request.");
+      trackEvent("contact_form_submit_error", { page: "contact" });
     }
   }
 
@@ -71,6 +75,7 @@ export function ContactForm() {
       <input
         type="text"
         name="honey"
+        aria-hidden="true"
         value={form.honey}
         onChange={(event) => setForm((current) => ({ ...current, honey: event.target.value }))}
         className="hidden"
@@ -158,7 +163,11 @@ export function ContactForm() {
           {status === "loading" ? "Sending..." : "Request Consultation"}
         </button>
         {message ? (
-          <p className={`text-sm ${status === "error" ? "text-red-700" : "text-[var(--secondary)]"}`}>
+          <p
+            role="status"
+            aria-live="polite"
+            className={`text-sm ${status === "error" ? "text-red-700" : "text-[var(--secondary)]"}`}
+          >
             {message}
           </p>
         ) : null}

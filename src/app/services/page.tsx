@@ -76,7 +76,7 @@ export default function ServicesPage() {
                 tier.featured
                   ? "border-[var(--primary-strong)] bg-[var(--surface-container-high)]"
                   : "border-[var(--outline)] bg-[var(--surface-container-lowest)]"
-              }`}
+              } elevate-hover`}
             >
               <div className="flex items-start justify-between gap-4">
                 <div>
@@ -179,12 +179,13 @@ export default function ServicesPage() {
 
         <div className="mt-16 overflow-hidden rounded-xl border border-[var(--outline)]">
           <table className="w-full border-collapse text-left text-sm">
+            <caption className="sr-only">Comparison of Starter, Core, and Infrastructure packages</caption>
             <thead className="bg-[var(--surface-container-high)] text-[var(--primary)]">
               <tr>
-                <th className="p-4 font-extrabold">Package</th>
-                <th className="p-4 font-extrabold">Starter</th>
-                <th className="p-4 font-extrabold">Core</th>
-                <th className="p-4 font-extrabold">Infrastructure</th>
+                <th scope="col" className="p-4 font-extrabold">Package</th>
+                <th scope="col" className="p-4 font-extrabold">Starter</th>
+                <th scope="col" className="p-4 font-extrabold">Core</th>
+                <th scope="col" className="p-4 font-extrabold">Infrastructure</th>
               </tr>
             </thead>
             <tbody className="bg-white">
@@ -199,9 +200,15 @@ export default function ServicesPage() {
               ].map((row) => (
                 <tr key={row[0]} className="border-t border-[var(--outline)]">
                   {row.map((cell, index) => (
-                    <td key={`${row[0]}-${index}`} className="p-4 text-[var(--text-muted)]">
-                      {cell}
-                    </td>
+                    index === 0 ? (
+                      <th key={`${row[0]}-${index}`} scope="row" className="p-4 text-[var(--text-muted)]">
+                        {cell}
+                      </th>
+                    ) : (
+                      <td key={`${row[0]}-${index}`} className="p-4 text-[var(--text-muted)]">
+                        {cell}
+                      </td>
+                    )
                   ))}
                 </tr>
               ))}

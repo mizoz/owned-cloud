@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { Container } from "@/components/Container";
+import { TrackedLink } from "@/components/TrackedLink";
 
 export function CallToAction() {
   return (
@@ -17,12 +17,22 @@ export function CallToAction() {
           We scope the bottleneck, build the workflow, and give you a working result you can measure.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-          <Link href="/contact" className="btn-primary">
+          <TrackedLink
+            href="/contact"
+            className="btn-primary"
+            eventName="cta_click"
+            eventProps={{ placement: "shared_cta_primary" }}
+          >
             Book Your Free 15-Min Audit
-          </Link>
-          <Link href="/services" className="btn-secondary border-slate-700 bg-slate-800 text-white hover:bg-slate-700">
+          </TrackedLink>
+          <TrackedLink
+            href="/services"
+            className="btn-secondary border-slate-700 bg-slate-800 text-white hover:bg-slate-700"
+            eventName="cta_click"
+            eventProps={{ placement: "shared_cta_secondary" }}
+          >
             Review Packages
-          </Link>
+          </TrackedLink>
         </div>
       </Container>
     </section>

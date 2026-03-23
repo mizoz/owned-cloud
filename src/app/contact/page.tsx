@@ -5,6 +5,7 @@ import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { StructuredData } from "@/components/StructuredData";
 import { publicEnv } from "@/lib/public-env";
 import { siteConfig } from "@/lib/constants";
 import { buildMetadata } from "@/lib/seo";
@@ -18,6 +19,21 @@ export const metadata = buildMetadata({
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--text)]">
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          name: "Contact Owned Cloud",
+          url: `${siteConfig.url}/contact`,
+          about: {
+            "@type": "Organization",
+            name: siteConfig.name,
+            legalName: siteConfig.legalName,
+            email: siteConfig.email,
+            telephone: siteConfig.phone || undefined,
+          },
+        }}
+      />
       <SiteHeader />
       <section className="hero-shell px-6 pb-16 pt-24 lg:px-12">
         <Container className="max-w-7xl">
@@ -81,7 +97,24 @@ export default function ContactPage() {
               <p className="eyebrow text-[var(--text-muted)]">Contact</p>
               <div className="mt-4 space-y-3 text-[var(--text-muted)]">
                 <p>
-                  <span className="font-semibold text-[var(--primary)]">Email:</span> {siteConfig.email}
+                  <span className="font-semibold text-[var(--primary)]">Business:</span> {siteConfig.legalName}
+                </p>
+                <p>
+                  <span className="font-semibold text-[var(--primary)]">Email:</span>{" "}
+                  <Link href={`mailto:${siteConfig.email}`} className="font-medium text-[var(--primary-strong)] underline-offset-2 hover:underline">
+                    {siteConfig.email}
+                  </Link>
+                </p>
+                {siteConfig.phone ? (
+                  <p>
+                    <span className="font-semibold text-[var(--primary)]">Phone:</span>{" "}
+                    <Link href={`tel:${siteConfig.phone}`} className="font-medium text-[var(--primary-strong)] underline-offset-2 hover:underline">
+                      {siteConfig.phone}
+                    </Link>
+                  </p>
+                ) : null}
+                <p>
+                  <span className="font-semibold text-[var(--primary)]">Service region:</span> {siteConfig.serviceRegion}
                 </p>
                 <p>
                   <span className="font-semibold text-[var(--primary)]">Location:</span> {siteConfig.location}

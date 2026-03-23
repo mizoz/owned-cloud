@@ -74,6 +74,7 @@ select {
   padding: 2rem;
   background: var(--surface-container-lowest);
   box-shadow: var(--shadow-card);
+  backdrop-filter: blur(6px);
 }
 
 .btn-primary {
@@ -96,6 +97,12 @@ select {
   transform: translateY(-1px);
 }
 
+.btn-primary:focus-visible,
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--secondary);
+  outline-offset: 2px;
+}
+
 .btn-secondary {
   display: inline-flex;
   align-items: center;
@@ -114,6 +121,17 @@ select {
 .btn-secondary:hover {
   background: var(--surface-container-high);
   transform: translateY(-1px);
+}
+
+.elevate-hover {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.elevate-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 48px rgba(13, 28, 47, 0.16);
 }
 
 .input-base {
@@ -173,4 +191,13 @@ select {
 
 .material-symbols-outlined {
   font-variation-settings: "FILL" 0, "wght" 500, "GRAD" 0, "opsz" 24;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

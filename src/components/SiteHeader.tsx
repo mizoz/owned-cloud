@@ -45,6 +45,8 @@ export function SiteHeader() {
             onClick={() => setOpen((current) => !current)}
             className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-200 text-slate-700 lg:hidden"
             aria-label="Toggle menu"
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
           >
             <span className="material-symbols-outlined">{open ? "close" : "menu"}</span>
           </button>
@@ -52,7 +54,7 @@ export function SiteHeader() {
       </Container>
 
       {open ? (
-        <div className="border-t border-slate-200 bg-white lg:hidden">
+        <div id="mobile-navigation" className="border-t border-slate-200 bg-white lg:hidden">
           <Container className="py-4">
             <nav className="flex flex-col gap-3">
               {primaryNavigation.map((link) => (

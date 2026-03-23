@@ -13,6 +13,7 @@ const taskLoadOptions = [
 export function RoiEstimator() {
   const [teamSize, setTeamSize] = useState(12);
   const [manualTaskLoad, setManualTaskLoad] = useState<(typeof taskLoadOptions)[number]["value"]>(65);
+  const teamSizeInputId = "roi-team-size";
 
   const metrics = useMemo(() => {
     const hoursSaved = teamSize * (manualTaskLoad / 100) * 160 * 0.4;
@@ -36,10 +37,11 @@ export function RoiEstimator() {
         <div className="mt-6 space-y-6">
           <div>
             <div className="mb-2 flex justify-between text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              <span>Team Size</span>
+              <label htmlFor={teamSizeInputId}>Team Size</label>
               <span className="text-[var(--primary)]">{teamSize} Members</span>
             </div>
             <input
+              id={teamSizeInputId}
               type="range"
               min="1"
               max="30"
@@ -49,19 +51,23 @@ export function RoiEstimator() {
             />
           </div>
 
-          <div>
+          <fieldset>
+            <legend className="sr-only">Manual Task Load</legend>
             <div className="mb-2 flex justify-between text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
               <span>Manual Task Load</span>
               <span className="text-[var(--primary)]">
                 {taskLoadOptions.find((option) => option.value === manualTaskLoad)?.label} ({manualTaskLoad}%)
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-2">
+            <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Manual task load">
               {taskLoadOptions.map((option) => (
                 <button
                   key={option.value}
                   type="button"
                   onClick={() => setManualTaskLoad(option.value)}
+                  role="radio"
+                  aria-checked={manualTaskLoad === option.value}
+                  aria-pressed={manualTaskLoad === option.value}
                   className={`rounded-md border px-3 py-2 text-xs font-bold uppercase tracking-[0.14em] ${
                     manualTaskLoad === option.value
                       ? "border-[var(--primary-strong)] bg-[var(--surface-container-high)] text-[var(--primary)]"
@@ -72,7 +78,7 @@ export function RoiEstimator() {
                 </button>
               ))}
             </div>
-          </div>
+          </fieldset>
         </div>
 
         <div className="mt-8 grid grid-cols-2 gap-4">

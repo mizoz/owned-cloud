@@ -4,6 +4,7 @@ import { RoiEstimator } from "@/components/RoiEstimator";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StructuredData } from "@/components/StructuredData";
+import { TrackedLink } from "@/components/TrackedLink";
 import { getAllCaseStudies } from "@/lib/mdx";
 import { buildMetadata } from "@/lib/seo";
 import { serviceAnchors, siteConfig } from "@/lib/constants";
@@ -58,6 +59,24 @@ const sovereigntyPoints = [
   "Local private nodes",
 ];
 
+const trustSignals = [
+  {
+    icon: "verified",
+    title: "Documented Delivery",
+    body: "Every engagement includes a scope document, implementation record, and handoff notes.",
+  },
+  {
+    icon: "schedule",
+    title: "Fast Response",
+    body: "You get a response within one business day and a clear next action, not generic follow-up.",
+  },
+  {
+    icon: "policy",
+    title: "Compliance Focused",
+    body: "Privacy, access boundaries, and data location are addressed in each system design.",
+  },
+];
+
 export default async function Home() {
   const caseStudies = await getAllCaseStudies();
   const featuredStudy = caseStudies[0];
@@ -68,10 +87,15 @@ export default async function Home() {
         data={{
           "@context": "https://schema.org",
           "@type": "LocalBusiness",
+          "@id": `${siteConfig.url}#localbusiness`,
           name: "Owned Cloud",
+          legalName: siteConfig.legalName,
           description: "Calgary-based business automation and private cloud consultancy",
           url: siteConfig.url,
           email: siteConfig.email,
+          telephone: siteConfig.phone || undefined,
+          sameAs: siteConfig.sameAs.length ? siteConfig.sameAs : undefined,
+          areaServed: siteConfig.serviceRegion,
           address: {
             "@type": "PostalAddress",
             addressLocality: "Calgary",
@@ -104,13 +128,23 @@ export default async function Home() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-2">
-              <Link href="/contact" className="btn-primary gap-2">
+              <TrackedLink
+                href="/contact"
+                className="btn-primary gap-2"
+                eventName="cta_click"
+                eventProps={{ placement: "hero_primary", page: "home" }}
+              >
                 Book Your Free 15-Min Audit
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
-              </Link>
-              <Link href="/stack" className="btn-secondary">
+              </TrackedLink>
+              <TrackedLink
+                href="/stack"
+                className="btn-secondary"
+                eventName="cta_click"
+                eventProps={{ placement: "hero_secondary", page: "home" }}
+              >
                 See How It Works
-              </Link>
+              </TrackedLink>
             </div>
           </div>
 
@@ -154,7 +188,7 @@ export default async function Home() {
             {pillars.map((pillar) => (
               <article
                 key={pillar.title}
-                className="rounded-xl bg-[var(--surface-container-lowest)] p-8 transition-transform duration-300 hover:-translate-y-2"
+                className="elevate-hover rounded-xl bg-[var(--surface-container-lowest)] p-8"
               >
                 <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-lg ${pillar.iconTone}`}>
                   <span className="material-symbols-outlined">{pillar.icon}</span>
@@ -236,6 +270,26 @@ export default async function Home() {
         </Container>
       </section>
 
+      <section className="px-6 pb-20 lg:px-12">
+        <Container className="max-w-7xl rounded-2xl border border-[var(--outline)] bg-[var(--surface-container-lowest)] p-8 lg:p-10">
+          <div className="max-w-3xl">
+            <p className="eyebrow text-[var(--text-muted)]">Trust Signals</p>
+            <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[var(--primary)] lg:text-4xl">
+              Built for long-term client confidence, not one-off demos.
+            </h2>
+          </div>
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {trustSignals.map((item) => (
+              <article key={item.title} className="elevate-hover rounded-xl bg-[var(--surface-container-low)] p-6">
+                <span className="material-symbols-outlined text-2xl text-[var(--secondary)]">{item.icon}</span>
+                <h3 className="mt-4 text-lg font-bold text-[var(--primary)]">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </Container>
+      </section>
+
       {featuredStudy ? (
         <section className="px-6 pb-20 lg:px-12">
           <Container className="grid gap-8 rounded-2xl bg-[var(--surface-container-low)] p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
@@ -298,12 +352,14 @@ export default async function Home() {
           </div>
 
           <div className="mt-16">
-            <Link
+            <TrackedLink
               href="/contact"
               className="inline-flex rounded-md bg-[var(--secondary)] px-10 py-5 text-[0.72rem] font-extrabold uppercase tracking-[0.16em] text-white transition-all hover:brightness-110"
+              eventName="cta_click"
+              eventProps={{ placement: "home_bottom_banner", page: "home" }}
             >
               Book Your Free 15-Min Audit
-            </Link>
+            </TrackedLink>
           </div>
         </Container>
       </section>

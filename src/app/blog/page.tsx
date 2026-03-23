@@ -71,21 +71,33 @@ export default async function BlogPage({
         </div>
 
         <div className="mt-10 flex items-center justify-between">
-          <Link
-            href={pagination.page > 1 ? `/blog?page=${pagination.page - 1}${selectedTag ? `&tag=${encodeURIComponent(selectedTag)}` : ""}` : "#"}
-            className={`btn-secondary ${pagination.page === 1 ? "pointer-events-none opacity-50" : ""}`}
-          >
-            Previous
-          </Link>
+          {pagination.page > 1 ? (
+            <Link
+              href={`/blog?page=${pagination.page - 1}${selectedTag ? `&tag=${encodeURIComponent(selectedTag)}` : ""}`}
+              className="btn-secondary"
+            >
+              Previous
+            </Link>
+          ) : (
+            <span className="btn-secondary cursor-not-allowed opacity-50" aria-disabled="true">
+              Previous
+            </span>
+          )}
           <p className="text-sm text-[var(--text-muted)]">
             Page {pagination.page} of {pagination.totalPages}
           </p>
-          <Link
-            href={pagination.page < pagination.totalPages ? `/blog?page=${pagination.page + 1}${selectedTag ? `&tag=${encodeURIComponent(selectedTag)}` : ""}` : "#"}
-            className={`btn-secondary ${pagination.page >= pagination.totalPages ? "pointer-events-none opacity-50" : ""}`}
-          >
-            Next
-          </Link>
+          {pagination.page < pagination.totalPages ? (
+            <Link
+              href={`/blog?page=${pagination.page + 1}${selectedTag ? `&tag=${encodeURIComponent(selectedTag)}` : ""}`}
+              className="btn-secondary"
+            >
+              Next
+            </Link>
+          ) : (
+            <span className="btn-secondary cursor-not-allowed opacity-50" aria-disabled="true">
+              Next
+            </span>
+          )}
         </div>
       </Container>
       <SiteFooter />

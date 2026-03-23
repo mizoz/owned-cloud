@@ -20,7 +20,7 @@ export function buildMetadata({
   description,
   path = "/",
   type = "website",
-  image = "/dashboard-preview.svg",
+  image = "/opengraph-image",
   keywords = [],
   publishedTime,
 }: MetadataInput): Metadata {
