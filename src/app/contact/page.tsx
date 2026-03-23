@@ -1,9 +1,19 @@
+import Link from "next/link";
+import { CalBookingEmbed } from "@/components/CalBookingEmbed";
 import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { publicEnv } from "@/lib/public-env";
+import { siteConfig } from "@/lib/constants";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "Book a Free Audit · Owned Cloud Calgary",
+  description: "Send project details or book a free 15-minute audit with Owned Cloud in Calgary.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
@@ -51,17 +61,35 @@ export default function ContactPage() {
             <ContactForm />
             <div className="card-panel p-5">
               <p className="eyebrow text-[var(--text-muted)]">Book directly</p>
-              {publicEnv.calendlyUrl ? (
-                <iframe
-                  title="Calendly booking"
-                  src={publicEnv.calendlyUrl}
-                  className="mt-4 h-[720px] w-full rounded-xl border border-[var(--outline)] bg-white"
-                />
+              {publicEnv.calLink ? (
+                <div className="mt-4 h-[720px] overflow-hidden rounded-xl border border-[var(--outline)] bg-white">
+                  <CalBookingEmbed calLink={publicEnv.calLink} />
+                </div>
               ) : (
-                <p className="mt-4 leading-7 text-[var(--text-muted)]">
-                  Add `NEXT_PUBLIC_CALENDLY_URL` to embed your booking calendar here.
-                </p>
+                <div className="mt-4 rounded-xl bg-[var(--surface-container-low)] p-5">
+                  <p className="leading-7 text-[var(--text-muted)]">
+                    Booking is available by request while the public scheduler is being finalized.
+                  </p>
+                  <Link href={`mailto:${siteConfig.email}?subject=Book%20a%20Free%2015-Min%20Audit`} className="btn-primary mt-4">
+                    Request Booking Link
+                  </Link>
+                </div>
               )}
+            </div>
+
+            <div className="rounded-xl bg-[var(--surface-container-low)] p-6">
+              <p className="eyebrow text-[var(--text-muted)]">Contact</p>
+              <div className="mt-4 space-y-3 text-[var(--text-muted)]">
+                <p>
+                  <span className="font-semibold text-[var(--primary)]">Email:</span> {siteConfig.email}
+                </p>
+                <p>
+                  <span className="font-semibold text-[var(--primary)]">Location:</span> {siteConfig.location}
+                </p>
+                <p>
+                  <span className="font-semibold text-[var(--primary)]">Response time:</span> {siteConfig.supportPromise}
+                </p>
+              </div>
             </div>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { siteConfig } from "@/lib/constants";
 import "./globals.css";
 
 const headline = Manrope({
@@ -13,13 +14,34 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://owned-cloud.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Owned Cloud | Calgary Business Systems & Automation",
+    default: "Owned Cloud · Calgary Business Automation & Private Cloud",
     template: "%s | Owned Cloud",
   },
-  description:
-    "Calgary business systems and automation for small teams that want fewer subscriptions, faster follow-up, and infrastructure they control.",
+  description: siteConfig.description,
+  openGraph: {
+    title: "Owned Cloud · Calgary Business Automation & Private Cloud",
+    description: siteConfig.description,
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    type: "website",
+    locale: "en_CA",
+    images: [
+      {
+        url: "/dashboard-preview.svg",
+        width: 1200,
+        height: 630,
+        alt: "Owned Cloud dashboard preview",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Owned Cloud · Calgary Business Automation & Private Cloud",
+    description: siteConfig.description,
+    images: ["/dashboard-preview.svg"],
+  },
 };
 
 export default function RootLayout({

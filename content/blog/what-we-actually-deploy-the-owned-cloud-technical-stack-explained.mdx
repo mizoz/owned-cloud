@@ -1,0 +1,75 @@
+---
+title: "What We Actually Deploy: The Owned Cloud Technical Stack Explained"
+slug: "what-we-actually-deploy-the-owned-cloud-technical-stack-explained"
+date: "2026-03-23"
+excerpt: "A transparent walkthrough of the stack behind Owned Cloud projects, from frontend and database to automation, networking, and monitoring."
+author: "Ahmed"
+tags:
+  - "self-hosted business tools"
+  - "technical stack"
+  - "open source"
+seoTitle: "What We Actually Deploy: The Owned Cloud Technical Stack Explained"
+seoDescription: "A direct breakdown of the stack Owned Cloud uses for automation, private cloud, dashboards, and business systems."
+---
+
+There is no reason to hide the stack. If the architecture is sound, it should survive being explained.
+
+Owned Cloud is built around a simple principle: use tools that are good enough to run real business systems, open enough to avoid lock-in, and practical enough that small businesses can afford to operate them.
+
+## Frontend: Next.js
+
+We use Next.js for public sites, dashboards, client portals, and app interfaces. It gives us a fast frontend framework with strong routing, server-side rendering, and enough flexibility to handle both marketing and product surfaces.
+
+For clients, this matters because one frontend foundation can support multiple parts of the business instead of creating a different stack for every project.
+
+## Data and auth: Supabase
+
+Supabase is usually the first choice for database, authentication, and API-backed application work.
+
+It gives us Postgres under the hood, which means the data layer remains understandable and portable. That matters more than the convenience features. You should be able to inspect your data model without learning a proprietary abstraction nobody asked for.
+
+## Automation: n8n
+
+n8n is the workflow engine because it is self-hostable, flexible, and does not punish growth with task-based pricing.
+
+This is the part of the stack that often becomes business-critical fastest. Intake, notifications, assignment, reporting triggers, reminders, and sync logic all belong in a workflow layer that the business can control.
+
+## Networking: Cloudflare and Tailscale
+
+Cloudflare handles DNS, secure public exposure, and network protection. Tailscale handles private access paths for internal services and administrative work.
+
+This combination lets us keep sensitive systems off the open internet while still making the right interfaces available where they need to be.
+
+## Infrastructure: Docker, Hetzner, Dokku
+
+Docker is the default packaging layer because consistent environments matter. Hetzner is often the VPS provider because the economics are strong and the platform is straightforward. Dokku is useful when we want a simple self-hosted deployment workflow without building an internal platform team.
+
+Again, the theme is practicality. Not novelty.
+
+## Monitoring and support layers
+
+Plausible for privacy-friendly analytics. Glitchtip for error monitoring. Stalwart or Postal for email infrastructure when the project needs ownership at that layer. Tooljet or custom dashboards when internal visibility matters.
+
+The job is not to maximize the number of tools. It is to keep the stack legible.
+
+## Why this stack works for small business
+
+Small businesses need systems that can grow without becoming financially irrational.
+
+That means:
+
+- open standards where possible
+- portable data
+- clear deployment paths
+- a workflow engine that is not priced like a tax meter
+- infrastructure that can be explained without hand waving
+
+This stack is not the only possible answer. It is the one we use because the tradeoffs are defensible.
+
+## The actual advantage
+
+The advantage is not that the stack is “modern.” The advantage is that it keeps you in a position where you can understand what is running, migrate when needed, and avoid building the business on top of tools you cannot leave.
+
+That is why we default to open-source and self-hostable components where they make sense. Not because hosted tools are bad, but because business-critical systems should not be accidental rentals if they do not have to be.
+
+If you want the visual version of this architecture, start with the stack page. If you want it applied to your business, start with the bottleneck.

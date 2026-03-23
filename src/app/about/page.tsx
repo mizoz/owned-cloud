@@ -1,9 +1,17 @@
+import Link from "next/link";
 import Image from "next/image";
 import { CallToAction } from "@/components/CallToAction";
 import { Container } from "@/components/Container";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { buildMetadata } from "@/lib/seo";
+
+export const metadata = buildMetadata({
+  title: "About · Owned Cloud Calgary",
+  description: "About Ahmed and the operating principles behind Owned Cloud’s Calgary-based automation and private cloud practice.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
@@ -23,6 +31,14 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
           <div>
             <div className="space-y-6 text-lg leading-8 text-[var(--text-muted)]">
+              <div className="rounded-xl bg-[var(--surface-container-low)] p-6">
+                <p className="eyebrow text-[var(--text-muted)]">Founder</p>
+                <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">Ahmed</h2>
+                <p className="mt-4 text-[var(--text-muted)]">
+                  Digital systems architect working at the intersection of automation, infrastructure, and small business operations in Calgary. The focus is not abstract transformation. It is building systems that remove measurable friction.
+                </p>
+              </div>
+
               <p>
                 The model is simple: start with a clear operational problem, fix it quickly, and build trust from
                 a working result. That might be lead follow-up, appointment booking, internal handoffs, or owned
@@ -59,19 +75,19 @@ export default function AboutPage() {
         <div className="mt-14 grid gap-6 lg:grid-cols-3">
           {[
             {
-              title: "Technical depth",
+              title: "Start with the bottleneck.",
               description:
-                "Next.js, Supabase, Cloudflare, automation workflows, dashboards, and lightweight internal tools.",
+                "We do not sell discovery phases. We find the point of friction that costs the most time or money, fix it, and prove value before expanding scope.",
             },
             {
-              title: "Business framing",
+              title: "Own your infrastructure.",
               description:
-                "Every project is tied back to lead response, staff time saved, client experience, or recurring costs reduced.",
+                "Your data, workflows, dashboards, and runbooks should be portable. We build on open-source tools in environments you control.",
             },
             {
-              title: "Local delivery",
+              title: "Local delivery, real accountability.",
               description:
-                "Calgary-based positioning, clear communication, and implementation that respects how small teams really operate.",
+                "We are in Calgary. We answer the phone. The sophistication of modern automation with the accountability of a local operator.",
             },
           ].map((item) => (
             <article key={item.title} className="rounded-xl bg-[var(--surface-container-lowest)] p-8 shadow-[var(--shadow-card)]">
@@ -79,6 +95,21 @@ export default function AboutPage() {
               <p className="mt-4 leading-7 text-[var(--text-muted)]">{item.description}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-14 rounded-xl bg-[var(--surface-container-low)] p-8">
+          <p className="eyebrow text-[var(--text-muted)]">Built on</p>
+          <div className="mt-5 flex flex-wrap gap-3">
+            {["Next.js", "Supabase", "Cloudflare", "n8n", "Docker", "Tailscale", "Hetzner"].map((item) => (
+              <Link
+                key={item}
+                href="/stack"
+                className="rounded-full bg-white px-4 py-2 text-sm font-semibold text-[var(--primary)] shadow-sm"
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
         </div>
       </Container>
 

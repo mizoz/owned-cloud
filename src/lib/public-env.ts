@@ -4,5 +4,8 @@ function readValue(name: string) {
 }
 
 export const publicEnv = {
-  calendlyUrl: readValue("NEXT_PUBLIC_CALENDLY_URL"),
+  calLink: readValue("NEXT_PUBLIC_CAL_LINK") || "ahmed-zalabany-stil6d/quick-chat",
+  siteUrl: readValue("NEXT_PUBLIC_SITE_URL") || "https://owned-cloud.com",
+  plausibleDomain: readValue("NEXT_PUBLIC_PLAUSIBLE_DOMAIN"),
+  plausibleHost: readValue("NEXT_PUBLIC_PLAUSIBLE_HOST"),
 };

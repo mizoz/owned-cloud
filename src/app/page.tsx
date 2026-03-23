@@ -1,26 +1,54 @@
 import Link from "next/link";
 import { Container } from "@/components/Container";
+import { RoiEstimator } from "@/components/RoiEstimator";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
+import { StructuredData } from "@/components/StructuredData";
+import { getAllCaseStudies } from "@/lib/mdx";
+import { buildMetadata } from "@/lib/seo";
+import { serviceAnchors, siteConfig } from "@/lib/constants";
+
+export const metadata = buildMetadata({
+  title: "Owned Cloud · Calgary Business Automation & Private Cloud",
+  description:
+    "Calgary business automation and private cloud consulting for real estate teams, trades, clinics, and professional services firms.",
+  path: "/",
+  keywords: [
+    "Calgary business automation",
+    "private cloud Calgary",
+    "data sovereignty Alberta",
+    "lead follow-up automation",
+  ],
+});
+
+const trustIndustries = [
+  { icon: "apartment", label: "Real Estate" },
+  { icon: "construction", label: "Trades" },
+  { icon: "medical_services", label: "Clinics" },
+  { icon: "briefcase", label: "Professional Services" },
+];
 
 const pillars = [
   {
     icon: "settings_input_component",
     iconTone: "text-[var(--primary)] bg-[rgba(0,52,97,0.05)]",
     title: "Workflow Architecture",
-    body: "Redesigning repeat operations into linear, automated paths that eliminate human error and bottleneck friction.",
+    body: "Redesign repeat operations into a documented path that removes copy-paste work, missed handoffs, and avoidable errors.",
+    href: serviceAnchors[0].href,
   },
   {
     icon: "psychology",
     iconTone: "text-[var(--secondary)] bg-[rgba(0,108,73,0.05)]",
     title: "AI Lead Synthesis",
-    body: "Intelligent agents that identify, score, and engage prospects in real time, delivering warm opportunities to your CRM.",
+    body: "Identify, score, and route leads automatically so the best opportunities reach the right person while they are still hot.",
+    href: serviceAnchors[1].href,
   },
   {
     icon: "hub",
     iconTone: "text-[var(--primary)] bg-[rgba(0,52,97,0.05)]",
     title: "Custom Business Intelligence",
-    body: "Real-time dashboards that give you a god view of operations, turning raw data into strategic execution.",
+    body: "Build one place to see what is happening across your systems instead of checking four dashboards and two spreadsheets.",
+    href: serviceAnchors[2].href,
   },
 ];
 
@@ -30,9 +58,29 @@ const sovereigntyPoints = [
   "Local private nodes",
 ];
 
-export default function Home() {
+export default async function Home() {
+  const caseStudies = await getAllCaseStudies();
+  const featuredStudy = caseStudies[0];
+
   return (
     <main className="min-h-screen bg-[var(--background)] text-[var(--text)]">
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Owned Cloud",
+          description: "Calgary-based business automation and private cloud consultancy",
+          url: siteConfig.url,
+          email: siteConfig.email,
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Calgary",
+            addressRegion: "AB",
+            addressCountry: "CA",
+          },
+          priceRange: siteConfig.priceRange,
+        }}
+      />
       <SiteHeader />
 
       <section className="hero-shell overflow-hidden px-6 pb-24 pt-24 lg:px-12">
@@ -60,72 +108,32 @@ export default function Home() {
                 Book Your Free 15-Min Audit
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </Link>
-              <Link href="/services" className="btn-secondary">
-                Launch Demo
+              <Link href="/stack" className="btn-secondary">
+                See How It Works
               </Link>
             </div>
           </div>
 
           <div className="relative lg:col-span-5">
-            <div className="relative z-10 rounded-xl bg-[var(--surface-container-high)] p-1 shadow-[var(--shadow-soft)]">
-              <div className="rounded-lg bg-[var(--surface-container-lowest)] p-8">
-                <div className="flex items-center justify-between">
-                  <h3 className="text-lg font-bold text-[var(--primary)]">Live ROI Estimator</h3>
-                  <span className="rounded bg-[var(--secondary-soft)] px-2 py-1 text-[0.6rem] font-extrabold uppercase tracking-[0.14em] text-[var(--secondary)]">
-                    Real-Time Data
-                  </span>
-                </div>
-
-                <div className="mt-6 space-y-5">
-                  <div>
-                    <div className="mb-2 flex justify-between text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      <span>Team Size</span>
-                      <span className="text-[var(--primary)]">12 Members</span>
-                    </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-[var(--surface-container)]">
-                      <div className="h-full w-[45%] bg-[var(--primary)]" />
-                    </div>
-                  </div>
-
-                  <div>
-                    <div className="mb-2 flex justify-between text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      <span>Manual Task Load</span>
-                      <span className="text-[var(--primary)]">High (65%)</span>
-                    </div>
-                    <div className="h-1.5 overflow-hidden rounded-full bg-[var(--surface-container)]">
-                      <div className="h-full w-[65%] bg-[var(--secondary)]" />
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid grid-cols-2 gap-4">
-                  <div className="rounded-lg border-b-2 border-[var(--secondary-soft)] bg-[var(--surface-container-low)] p-4">
-                    <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      Hours Saved/Mo
-                    </p>
-                    <p className="mt-1 text-4xl font-extrabold tracking-tight text-[var(--secondary)]">
-                      420.5
-                    </p>
-                  </div>
-
-                  <div className="rounded-lg border-b-2 border-[var(--primary-strong)] bg-[var(--surface-container-low)] p-4">
-                    <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                      Lead Velocity
-                    </p>
-                    <p className="mt-1 text-4xl font-extrabold tracking-tight text-[var(--primary)]">
-                      +142%
-                    </p>
-                  </div>
-                </div>
-
-                <p className="mt-6 text-center text-xs italic text-[var(--text-muted)]">
-                  "The invisible engine driving your ROI."
-                </p>
-              </div>
-            </div>
-
+            <RoiEstimator />
             <div className="absolute -right-10 -top-10 h-56 w-56 rounded-full bg-[rgba(0,108,73,0.1)] blur-3xl" />
             <div className="absolute -bottom-10 -left-10 h-56 w-56 rounded-full bg-[rgba(0,52,97,0.1)] blur-3xl" />
+          </div>
+        </Container>
+      </section>
+
+      <section className="border-y border-[var(--outline)] bg-white/70 py-6">
+        <Container className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+          <p className="text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]">
+            Trusted by Calgary businesses in real estate, trades, clinics, and professional services
+          </p>
+          <div className="flex flex-wrap gap-4">
+            {trustIndustries.map((item) => (
+              <div key={item.label} className="flex items-center gap-2 rounded-full bg-[var(--surface-container-low)] px-4 py-2 text-sm text-[var(--primary)]">
+                <span className="material-symbols-outlined text-base">{item.icon}</span>
+                {item.label}
+              </div>
+            ))}
           </div>
         </Container>
       </section>
@@ -155,10 +163,10 @@ export default function Home() {
                   {pillar.title}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">{pillar.body}</p>
-                <div className="mt-6 flex items-center gap-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--secondary)]">
+                <Link href={pillar.href} className="mt-6 flex items-center gap-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--secondary)]">
                   Learn more
                   <span className="material-symbols-outlined text-sm">north_east</span>
-                </div>
+                </Link>
               </article>
             ))}
           </div>
@@ -228,11 +236,35 @@ export default function Home() {
         </Container>
       </section>
 
+      {featuredStudy ? (
+        <section className="px-6 pb-20 lg:px-12">
+          <Container className="grid gap-8 rounded-2xl bg-[var(--surface-container-low)] p-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+            <div>
+              <p className="eyebrow text-[var(--text-muted)]">Featured case study</p>
+              <p className="mt-4 text-5xl font-black tracking-tight text-[var(--secondary)]">
+                {featuredStudy.frontmatter.keyMetric}
+              </p>
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]">
+                {featuredStudy.frontmatter.keyMetricLabel}
+              </p>
+            </div>
+            <div>
+              <h2 className="text-3xl font-extrabold tracking-tight text-[var(--primary)]">
+                {featuredStudy.frontmatter.title}
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
+                {featuredStudy.frontmatter.excerpt}
+              </p>
+              <Link href={`/case-studies/${featuredStudy.slug}`} className="mt-6 inline-block font-semibold text-[var(--primary-strong)]">
+                Read the full case study →
+              </Link>
+            </div>
+          </Container>
+        </section>
+      ) : null}
+
       <section className="relative overflow-hidden bg-slate-900 py-32 text-white">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(108,248,187,0.08),_transparent_28%),linear-gradient(180deg,rgba(15,23,42,0.72),rgba(15,23,42,0.96))]" />
-        <div className="absolute inset-0 opacity-20">
-          <div className="h-full w-full bg-[linear-gradient(90deg,transparent_0%,rgba(148,163,184,0.08)_30%,transparent_60%),radial-gradient(circle_at_bottom_left,rgba(148,163,184,0.12),transparent_25%)]" />
-        </div>
         <Container className="relative z-10 max-w-7xl text-center">
           <div className="pill-label bg-emerald-500 text-white">
             <span className="material-symbols-outlined text-sm">location_on</span>
@@ -245,22 +277,22 @@ export default function Home() {
             Local Accountability.
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-300">
-            Headquartered in the heart of downtown Calgary. We provide the sophistication of a
-            modern automation practice with the accountability of local business culture.
+            Headquartered in Calgary. Modern automation capability, local accountability, and
+            same-day support response when something needs attention.
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-12 md:flex-row">
             <div className="text-left">
-              <p className="text-5xl font-black text-emerald-400">24/7</p>
+              <p className="text-5xl font-black text-emerald-400">Same-day</p>
               <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-slate-400">
                 Local Support Response
               </p>
             </div>
             <div className="hidden h-16 w-px bg-slate-700 md:block" />
             <div className="text-left">
-              <p className="text-5xl font-black text-emerald-400">150+</p>
+              <p className="text-5xl font-black text-emerald-400">Calgary</p>
               <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-slate-400">
-                Engines Deployed Locally
+                Focused Delivery Region
               </p>
             </div>
           </div>

@@ -1,0 +1,56 @@
+---
+title: "Eliminating 20 Hours/Week of Manual Follow-Up for a Calgary Real Estate Team"
+slug: "eliminating-20-hours-a-week-of-manual-follow-up-for-a-calgary-real-estate-team"
+date: "2026-03-23"
+excerpt: "A Calgary real estate team was routing leads through three inboxes and losing hours every week to manual handoff work. The fix was one intake workflow, one owner path, and one response system."
+client: "A Calgary real estate team"
+industry: "Real estate"
+services:
+  - "Workflow Architecture"
+  - "AI Lead Synthesis"
+keyMetric: "20 hrs/week"
+keyMetricLabel: "Manual follow-up time removed"
+seoTitle: "Case Study: Calgary Real Estate Team Manual Follow-Up Reduction"
+seoDescription: "How a Calgary real estate team cut manual follow-up by 20 hours per week and reduced response time to under 2 minutes."
+---
+
+{/* TEMPLATE: Replace with real client data before publishing */}
+
+## The problem
+
+Leads from Zillow, Realtor.ca, and the team website were landing in three different inboxes. Agents were forwarding messages manually, adding notes in inconsistent formats, and responding when they had time instead of when the lead arrived.
+
+Average first response time was around six hours. That meant high-intent inquiries were going cold before anyone qualified them.
+
+## The approach
+
+We scoped the first engagement around one outcome: every lead enters one workflow, gets acknowledged immediately, and is assigned to a real owner.
+
+The implementation used n8n as the workflow layer. Every inbound lead was normalized into a single intake structure, written into the CRM, tagged by source, and routed to an assigned agent based on rules the team could actually understand. We also added an instant acknowledgment message and a three-touch follow-up sequence for any lead that did not receive a real human conversation fast enough.
+
+## The stack
+
+- n8n for intake, routing, and follow-up automation
+- CRM integration for lead records and ownership
+- Notification hooks for agent assignment
+- Reporting dashboard for response speed and source tracking
+
+## The result
+
+Response time dropped from roughly six hours to under two minutes. Manual follow-up work dropped by an estimated 20 hours per week because agents no longer had to sort inboxes and hand-copy details into the CRM.
+
+Lead-to-showing conversion improved by 35% in the template scenario because follow-up happened while buyer intent was still active.
+
+## Before and after
+
+- Before: fragmented inboxes, manual forwarding, no consistent routing
+- After: one intake workflow, instant acknowledgment, clear owner assignment
+- Timeline: Starter package implementation, later expanded into Core for broader reporting
+
+## Client quote
+
+> TEMPLATE QUOTE: “We stopped arguing about who replied first and started seeing which leads were actually moving.”
+
+## Facing a similar problem?
+
+If your lead flow depends on shared inboxes and memory, the first fix is usually workflow architecture, not more reminders.
