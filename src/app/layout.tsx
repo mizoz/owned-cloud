@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
-import { Fraunces, Manrope } from "next/font/google";
+import { Inter, Manrope } from "next/font/google";
 import "./globals.css";
 
-const sans = Manrope({
+const headline = Manrope({
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-headline",
 });
 
-const serif = Fraunces({
+const body = Inter({
   subsets: ["latin"],
-  variable: "--font-serif",
+  variable: "--font-body",
 });
 
 export const metadata: Metadata = {
@@ -29,7 +29,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sans.variable} ${serif.variable} antialiased`}>{children}</body>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        />
+      </head>
+      <body className={`${headline.variable} ${body.variable} antialiased`}>{children}</body>
     </html>
   );
 }
