@@ -1,77 +1,100 @@
-# Owned Cloud
+# Owned Cloud — Main Sales Website
 
-Owned Cloud is the public-facing sales and authority site for a Calgary-based automation and private infrastructure practice. It is built with Next.js 16 App Router and deploys to Vercel on pushes to `main`.
+**https://owned-cloud.com**
 
-## Stack
+Calgary Business Automation — Stop burning capital on manual workflows.
 
-- Next.js 16.2.1
-- React 19
-- TypeScript
-- Tailwind CSS v4
-- MDX content for blog and case studies
-- Mautic for lead capture
-- Cal.com for inline booking
+---
 
-## Local Development
+## 🤖 AI Agent Instructions
 
-1. Install dependencies:
+**START HERE:** Read [`AI-CONTRIBUTING.md`](./AI-CONTRIBUTING.md)
+
+This file contains:
+- Complete project overview
+- Tech stack details
+- Brand guidelines
+- How to make changes
+- Business context
+- Common tasks
+- Testing checklist
+
+**Any AI model** working on this repo should read `AI-CONTRIBUTING.md` first.
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# Install
 npm install
-```
 
-2. Create local env:
-
-```bash
-cp .env.example .env.local
-```
-
-3. Start the app:
-
-```bash
+# Dev
 npm run dev
-```
 
-4. Build production output:
-
-```bash
+# Build
 npm run build
+
+# Deploy
+git push origin main  # Vercel auto-deploys
 ```
 
-## Route Map
+---
 
-- `/` homepage
-- `/services`
-- `/about`
-- `/contact`
-- `/blog`
-- `/blog/[slug]`
-- `/case-studies`
-- `/case-studies/[slug]`
-- `/stack`
-- `/faq`
-- `/privacy`
-- `/terms`
-- `/sitemap.xml`
-- `/robots.txt`
+## 📁 What's Here
 
-## Content
+| Directory | Purpose |
+|-----------|---------|
+| `src/app/` | Next.js pages (homepage, services, case studies) |
+| `src/components/` | Reusable UI components |
+| `src/lib/` | Utilities (MDX, SEO, analytics) |
+| `content/` | MDX content (case studies, blog posts) |
+| `public/` | Static assets (logo, images) |
 
-- Blog posts live in `content/blog`
-- Case studies live in `content/case-studies`
-- Shared metadata and navigation live in `src/lib/constants.ts`
-- SEO helpers live in `src/lib/seo.ts`
-- MDX loading and rendering live in `src/lib/mdx.tsx`
+---
 
-## External Integrations
+## 🎨 Brand System
 
-- `POST /api/contact` creates or updates leads in Mautic
-- `NEXT_PUBLIC_CAL_LINK` powers the inline booking experience
-- `NEXT_PUBLIC_SITE_URL` controls canonical URLs and metadata
+**Colors:** See `tailwind.config.ts`
+- Primary: `#004bca` (Owned Cloud Blue)
+- Surface: `#f7f9fb`
+- Text: `#191c1e` (NOT pure black)
 
-## Documentation
+**Fonts:** Manrope (headlines) + Inter (body)
 
-- [`docs/ARCHITECTURE.md`](./docs/ARCHITECTURE.md)
-- [`docs/CONTENT-GUIDE.md`](./docs/CONTENT-GUIDE.md)
-- [`docs/DEPLOYMENT.md`](./docs/DEPLOYMENT.md)
-- [`docs/SEO-CHECKLIST.md`](./docs/SEO-CHECKLIST.md)
+**Full Brand Guide:** `/home/az/business-brain/03-DESIGNS/owned-cloud-branding/`
+
+---
+
+## 📊 Status (2026-03-24)
+
+| Site | Status | URL |
+|------|--------|-----|
+| **owned-cloud.com** | ✅ Live | https://owned-cloud.com |
+| **getownedcloud.com** | ✅ Live | https://getownedcloud.com |
+| **zalastack.net** | 🟡 80% (NOC dashboard) | https://zalastack.net |
+| **ownedvault.com** | ⏳ Placeholder | https://ownedvault.com |
+
+---
+
+## 🔗 Related Repos
+
+| Repo | Purpose |
+|------|---------|
+| **mizoz/business-brain** | Strategy, plans, brand assets |
+| **mizoz/zalastack-dashboard** | Internal NOC dashboard |
+| **mizoz/lead-gen-pipeline** | Lead scraping tools |
+| **mizoz/EMAILDEBUG** | Email credentials & docs |
+
+---
+
+## 📞 Contact
+
+**Owner:** A Z (@zalab8)
+**Email:** hello@zalastack.com
+**Timezone:** America/Edmonton (MDT)
+
+---
+
+**Last Updated:** 2026-03-24
+**Deployed:** Vercel (auto-deploy on push to main)
