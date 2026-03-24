@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { BlogFrontmatter } from "@/lib/mdx";
+import { BlogFrontmatter, formatDisplayDate } from "@/lib/mdx";
 
 export function BlogCard({ post }: { post: { frontmatter: BlogFrontmatter; slug: string; readingTime: string } }) {
   return (
-    <article className="rounded-xl bg-[var(--surface-container-lowest)] p-8 shadow-[var(--shadow-card)]">
+    <article className="elevate-hover rounded-xl bg-[linear-gradient(180deg,var(--surface-container-lowest),rgba(239,244,255,0.72))] p-8 shadow-[var(--shadow-card)]">
       <div className="flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-        <span>{new Date(post.frontmatter.date).toLocaleDateString()}</span>
+        <span>{formatDisplayDate(post.frontmatter.date)}</span>
         <span>•</span>
         <span>{post.readingTime}</span>
       </div>

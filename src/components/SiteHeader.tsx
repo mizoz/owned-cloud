@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { BrandMark } from "@/components/BrandMark";
 import { Container } from "@/components/Container";
 import { primaryNavigation } from "@/lib/constants";
 
@@ -13,9 +14,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-30 border-b border-slate-200/80 bg-slate-50/85 backdrop-blur-xl">
       <Container className="flex h-20 items-center justify-between">
-        <Link href="/" className="text-lg font-extrabold tracking-tight text-slate-900">
-          Owned Cloud
-        </Link>
+        <BrandMark compact />
 
         <nav className="hidden items-center gap-7 lg:flex">
           {primaryNavigation.map((link) => {

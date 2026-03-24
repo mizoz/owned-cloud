@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BrandMark } from "@/components/BrandMark";
 import { Container } from "@/components/Container";
 import { footerNavigation, siteConfig } from "@/lib/constants";
 
@@ -7,7 +8,7 @@ export function SiteFooter() {
     <footer className="border-t border-slate-800 bg-slate-950 px-6 py-12 text-slate-400">
       <Container className="flex flex-col items-center justify-between gap-8 md:flex-row">
         <div className="flex flex-col items-center gap-3 md:items-start">
-          <div className="text-lg font-bold text-white">Owned Cloud</div>
+          <BrandMark compact light />
           <p className="text-center text-xs tracking-wide md:text-left">
             © 2026 {siteConfig.legalName}. Next.js · Supabase · Cloudflare · Calgary
           </p>

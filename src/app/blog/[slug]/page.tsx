@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
 import { StickyAuditCta, TocSidebar } from "@/components/PostContent";
 import { StructuredData } from "@/components/StructuredData";
-import { getAllBlogPosts, getBlogPostBySlug, renderMdx } from "@/lib/mdx";
+import { formatDisplayDate, getAllBlogPosts, getBlogPostBySlug, renderMdx } from "@/lib/mdx";
 import { buildMetadata, absoluteUrl } from "@/lib/seo";
 
 export async function generateStaticParams() {
@@ -76,7 +76,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               {post.frontmatter.title}
             </h1>
             <div className="mt-5 flex flex-wrap items-center gap-3 text-sm text-[var(--text-muted)]">
-              <span>{new Date(post.frontmatter.date).toLocaleDateString()}</span>
+              <span>{formatDisplayDate(post.frontmatter.date)}</span>
               <span>•</span>
               <span>{post.readingTime}</span>
               <span>•</span>

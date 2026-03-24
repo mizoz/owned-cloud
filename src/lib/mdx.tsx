@@ -178,3 +178,11 @@ export function paginate<T>(items: T[], page: number, pageSize: number) {
     totalPages,
   };
 }
+
+export function formatDisplayDate(date: string) {
+  return new Intl.DateTimeFormat("en-CA", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+  }).format(new Date(date));
+}
