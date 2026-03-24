@@ -8,13 +8,13 @@ export function CallToAction() {
       <Container className="relative z-10 text-center">
         <div className="pill-label bg-emerald-500 text-white">
           <span className="material-symbols-outlined text-sm">bolt</span>
-          Free 15-Min Audit
+          Free 15-Minute Audit
         </div>
         <h2 className="mt-8 text-4xl font-extrabold tracking-tight text-white lg:text-5xl">
-          Start with one system that saves time immediately.
+          Start with one business problem worth fixing now.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-          We scope the bottleneck, build the workflow, and give you a working result you can measure.
+          We help you choose the right first fix, build it properly, and leave you with something your team can actually use.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <TrackedLink
@@ -23,7 +23,7 @@ export function CallToAction() {
             eventName="cta_click"
             eventProps={{ placement: "shared_cta_primary" }}
           >
-            Book Your Free 15-Min Audit
+            Book Your Free 15-Minute Audit
           </TrackedLink>
           <TrackedLink
             href="/services"

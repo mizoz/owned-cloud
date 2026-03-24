@@ -3,7 +3,7 @@ export const siteConfig = {
   shortName: "Owned Cloud",
   legalName: "Owned Cloud by ZalaStack",
   description:
-    "Calgary-based business automation and private cloud consultancy for teams that need fewer manual tasks, better data ownership, and real operational systems.",
+    "Calgary-based business automation and private cloud consultancy for teams that want less manual work, clearer systems, and more control over their data.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://owned-cloud.com",
   domain: "owned-cloud.com",
   email: process.env.NOTIFICATION_EMAIL || "hello@owned-cloud.com",
@@ -42,6 +42,6 @@ export const footerNavigation = [
 
 export const serviceAnchors = [
   { href: "/services#workflow", label: "Workflow Architecture" },
-  { href: "/services#leads", label: "AI Lead Synthesis" },
+  { href: "/services#leads", label: "Lead Response Systems" },
   { href: "/services#intelligence", label: "Custom Business Intelligence" },
 ] as const;

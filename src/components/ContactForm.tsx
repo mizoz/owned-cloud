@@ -68,7 +68,7 @@ export function ContactForm() {
       <div>
         <p className="eyebrow text-[var(--text-muted)]">Send project details</p>
         <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">
-          Tell us where the friction is
+          Tell us what is slowing the business down
         </h2>
       </div>
 
@@ -154,13 +154,13 @@ export function ContactForm() {
           value={form.message}
           onChange={(event) => setForm((current) => ({ ...current, message: event.target.value }))}
           className="input-base resize-y"
-          placeholder="Leads are not getting called back, staff are double-booking, too many monthly tools, reporting is a mess..."
+          placeholder="Examples: leads are not getting called back, admin work is repeated, staff are double-booking, reporting is messy, or tools are not talking to each other."
         />
       </Field>
 
       <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <button type="submit" className="btn-primary" disabled={status === "loading"}>
-          {status === "loading" ? "Sending..." : "Request Consultation"}
+          {status === "loading" ? "Sending..." : "Send Request"}
         </button>
         {message ? (
           <p

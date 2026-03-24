@@ -38,7 +38,7 @@ export default function ContactPage() {
       <section className="hero-shell px-6 pb-16 pt-24 lg:px-12">
         <Container className="max-w-7xl">
           <SectionHeading
-            eyebrow="Free 15-Min Audit"
+            eyebrow="Free 15-Minute Audit"
             title="Book the audit or send the operating problem."
             description="Use the form if you want to outline the current friction in detail. Use the booking panel if you want a direct conversation."
           />
@@ -86,7 +86,7 @@ export default function ContactPage() {
                   <p className="leading-7 text-[var(--text-muted)]">
                     Booking is available by request while the public scheduler is being finalized.
                   </p>
-                  <Link href={`mailto:${siteConfig.email}?subject=Book%20a%20Free%2015-Min%20Audit`} className="btn-primary mt-4">
+                  <Link href={`mailto:${siteConfig.email}?subject=Book%20a%20Free%2015-Minute%20Audit`} className="btn-primary mt-4">
                     Request Booking Link
                   </Link>
                 </div>

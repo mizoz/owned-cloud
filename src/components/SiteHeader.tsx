@@ -37,7 +37,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-3">
           <Link href="/contact" className="hidden lg:inline-flex btn-primary">
-            Free Audit
+            Book Your Free Audit
           </Link>
           <button
             type="button"
@@ -68,7 +68,7 @@ export function SiteHeader() {
               ))}
               <div className="mt-2 border-t border-slate-200 pt-3">
                 <Link href="/contact" className="btn-primary w-full" onClick={() => setOpen(false)}>
-                  Book Free Audit
+                  Book Your Free Audit
                 </Link>
               </div>
             </nav>

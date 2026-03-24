@@ -12,7 +12,7 @@ import { serviceAnchors, siteConfig } from "@/lib/constants";
 export const metadata = buildMetadata({
   title: "Owned Cloud · Calgary Business Automation & Private Cloud",
   description:
-    "Calgary business automation and private cloud consulting for real estate teams, trades, clinics, and professional services firms.",
+    "We help Calgary businesses reduce manual work, improve follow-up, and build systems they can actually control.",
   path: "/",
   keywords: [
     "Calgary business automation",
@@ -34,21 +34,21 @@ const pillars = [
     icon: "settings_input_component",
     iconTone: "text-[var(--primary)] bg-[rgba(0,52,97,0.05)]",
     title: "Workflow Architecture",
-    body: "Redesign repeat operations into a documented path that removes copy-paste work, missed handoffs, and avoidable errors.",
+    body: "We turn messy repeat work into a clear process so your team stops relying on memory, inboxes, and copy-paste.",
     href: serviceAnchors[0].href,
   },
   {
     icon: "psychology",
     iconTone: "text-[var(--secondary)] bg-[rgba(0,108,73,0.05)]",
-    title: "AI Lead Synthesis",
-    body: "Identify, score, and route leads automatically so the best opportunities reach the right person while they are still hot.",
+    title: "Lead Response Systems",
+    body: "We help you reply faster, route leads properly, and stop good opportunities from going cold while the team is busy.",
     href: serviceAnchors[1].href,
   },
   {
     icon: "hub",
     iconTone: "text-[var(--primary)] bg-[rgba(0,52,97,0.05)]",
     title: "Custom Business Intelligence",
-    body: "Build one place to see what is happening across your systems instead of checking four dashboards and two spreadsheets.",
+    body: "We build one place to see the numbers that matter without chasing screenshots, exports, and half-updated spreadsheets.",
     href: serviceAnchors[2].href,
   },
 ];
@@ -73,7 +73,7 @@ const trustSignals = [
   {
     icon: "policy",
     title: "Compliance Focused",
-    body: "Privacy, access boundaries, and data location are addressed in each system design.",
+    body: "Privacy, access, and data location are considered from the start instead of being bolted on later.",
   },
 ];
 
@@ -112,18 +112,17 @@ export default async function Home() {
           <div className="space-y-8 lg:col-span-7">
             <div className="pill-label">
               <span className="material-symbols-outlined text-sm">bolt</span>
-              Operational Excellence 2030
+              Calgary Business Systems
             </div>
 
             <div className="space-y-5">
               <h1 className="max-w-3xl text-5xl font-extrabold leading-[1.02] tracking-tight text-[var(--primary)] lg:text-7xl">
-                The Automation
-                <br />
-                Engine for Business.
+                We help businesses run with less manual work and better systems.
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-[var(--text-muted)]">
-                Stop burning capital on manual workflows. We architect private, secure cloud
-                environments that automate your lead generation, data synthesis, and operations.
+                If leads are being missed, admin work is repeated, or your team is juggling too many tools, we help fix
+                the process. That can mean automation, reporting, client portals, or private infrastructure, depending
+                on what the business actually needs.
               </p>
             </div>
 
@@ -134,7 +133,7 @@ export default async function Home() {
                 eventName="cta_click"
                 eventProps={{ placement: "hero_primary", page: "home" }}
               >
-                Book Your Free 15-Min Audit
+                Book Your Free 15-Minute Audit
                 <span className="material-symbols-outlined text-base">arrow_forward</span>
               </TrackedLink>
               <TrackedLink
@@ -176,11 +175,11 @@ export default async function Home() {
         <Container className="max-w-7xl">
           <div className="mb-16 max-w-2xl">
             <h2 className="text-4xl font-extrabold tracking-tight text-[var(--primary)]">
-              Architectural Intelligence
+              What we actually help with
             </h2>
             <p className="mt-4 text-lg text-[var(--text-muted)]">
-              We do not just build software. We architect the structural foundation of your
-              digital workflow.
+              We do not sell vague transformation language. We fix broken handoffs, slow follow-up, weak reporting, and
+              the infrastructure behind those problems.
             </p>
           </div>
 
@@ -244,25 +243,25 @@ export default async function Home() {
 
           <div className="order-1 space-y-8 lg:order-2">
             <h2 className="text-4xl font-extrabold tracking-tight text-[var(--primary)] lg:text-6xl">
-              Data Sovereignty as a Service.
+              Keep more control over your systems and your data.
             </h2>
             <p className="text-lg leading-relaxed text-[var(--text-muted)]">
-              We do not rent you space in a generic cloud. We build your proprietary architecture.
-              Every line of code and byte of data is hosted in environments you control, ensuring
-              legal compliance and strategic security.
+              When it makes sense, we build on infrastructure you control instead of trapping the business inside one
+              vendor's pricing model, product roadmap, or data rules. That means more clarity, more portability, and
+              fewer surprises later.
             </p>
 
             <div className="grid grid-cols-2 gap-8 pt-4">
               <div>
                 <p className="text-5xl font-black text-[var(--secondary)]">100%</p>
                 <p className="mt-1 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                  Owner Control
+                  More Control
                 </p>
               </div>
               <div>
                 <p className="text-5xl font-black text-[var(--secondary)]">0</p>
                 <p className="mt-1 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                  Data Leakage
+                  Forced Lock-In
                 </p>
               </div>
             </div>
@@ -275,7 +274,7 @@ export default async function Home() {
           <div className="max-w-3xl">
             <p className="eyebrow text-[var(--text-muted)]">Trust Signals</p>
             <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-[var(--primary)] lg:text-4xl">
-              Built for long-term client confidence, not one-off demos.
+              Built for trust, handoff, and long-term use.
             </h2>
           </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
@@ -322,24 +321,24 @@ export default async function Home() {
         <Container className="relative z-10 max-w-7xl text-center">
           <div className="pill-label bg-emerald-500 text-white">
             <span className="material-symbols-outlined text-sm">location_on</span>
-            Calgary Based Engineering
+            Calgary-Based Engineering
           </div>
 
           <h2 className="mt-8 text-4xl font-extrabold tracking-tight text-white lg:text-6xl">
-            Architectural Intelligence,
+            Modern systems work,
             <br />
-            Local Accountability.
+            local accountability.
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-300">
-            Headquartered in Calgary. Modern automation capability, local accountability, and
-            same-day support response when something needs attention.
+            We work with Calgary and Alberta businesses that want a practical partner, not another software pitch.
+            We also work well with agencies, consultants, and referral partners who need a technical operator they can trust.
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-12 md:flex-row">
             <div className="text-left">
-              <p className="text-5xl font-black text-emerald-400">Same-day</p>
+              <p className="text-5xl font-black text-emerald-400">1 day</p>
               <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-slate-400">
-                Local Support Response
+                Typical Response Time
               </p>
             </div>
             <div className="hidden h-16 w-px bg-slate-700 md:block" />
@@ -358,7 +357,7 @@ export default async function Home() {
               eventName="cta_click"
               eventProps={{ placement: "home_bottom_banner", page: "home" }}
             >
-              Book Your Free 15-Min Audit
+              Book Your Free 15-Minute Audit
             </TrackedLink>
           </div>
         </Container>

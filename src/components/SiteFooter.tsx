@@ -10,10 +10,10 @@ export function SiteFooter() {
         <div className="flex flex-col items-center gap-3 md:items-start">
           <BrandMark compact light />
           <p className="text-center text-xs tracking-wide md:text-left">
-            © 2026 {siteConfig.legalName}. Next.js · Supabase · Cloudflare · Calgary
+            © 2026 {siteConfig.legalName}. Calgary-based business automation and private cloud systems.
           </p>
           <p className="text-center text-xs tracking-wide md:text-left">
-            Trusted automation partner for Calgary and surrounding Alberta businesses.
+            Practical systems for service businesses, operators, and referral partners across Calgary and Alberta.
           </p>
           <Link href={`mailto:${siteConfig.email}`} className="text-xs text-emerald-300 hover:text-emerald-200">
             {siteConfig.email}

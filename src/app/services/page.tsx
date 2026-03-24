@@ -8,7 +8,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Automation Packages · Owned Cloud Calgary",
-  description: "Starter, Core, and Infrastructure packages for Calgary businesses that need workflow automation, lead systems, and owned infrastructure.",
+  description: "Clear starter, systems, and infrastructure packages for businesses that want less manual work and better operating systems.",
   path: "/services",
 });
 
@@ -16,7 +16,7 @@ const serviceTiers = [
   {
     name: "Starter",
     price: "$800",
-    summary: "A bulletproof entry package to fix follow-up and prove value quickly.",
+    summary: "A simple first project to fix one painful process quickly.",
     features: [
       "Lead Follow-Up Automation Package",
       "One intake workflow mapped end to end",
@@ -28,7 +28,7 @@ const serviceTiers = [
   {
     name: "Core Systems",
     price: "$2,500-$5,000",
-    summary: "For businesses ready to clean up operations across booking, intake, and follow-up.",
+    summary: "For businesses ready to clean up more than one process across follow-up, admin, and reporting.",
     features: [
       "Multi-step automation design",
       "Scheduling, reminders, and internal workflows",
@@ -41,7 +41,7 @@ const serviceTiers = [
   {
     name: "Infrastructure",
     price: "Custom",
-    summary: "For teams that need owned infrastructure, secure hosting, portals, or deeper integration work.",
+    summary: "For teams that need private infrastructure, client portals, or deeper systems work.",
     features: [
       "Private infrastructure planning",
       "Custom client portals and dashboards",
@@ -60,8 +60,8 @@ export default function ServicesPage() {
         <Container className="max-w-7xl">
           <SectionHeading
             eyebrow="Automation Packages"
-            title="Three ways to remove operational drag."
-            description="Start with the fixed-scope automation engine, then expand into deeper systems only when the first engagement proves itself."
+            title="Three ways we help businesses clean up how work gets done."
+            description="Start with one clear problem, prove the value, and only expand when the business actually needs more."
           />
         </Container>
       </section>
@@ -118,12 +118,12 @@ export default function ServicesPage() {
         <div className="mt-14 rounded-xl bg-[var(--surface-container-low)] p-8">
           <h3 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">How we scope work</h3>
           <p className="mt-4 max-w-3xl leading-7 text-[var(--text-muted)]">
-            We define the bottleneck, agree on the deliverable, build the system, and show you the outcome.
-            No ambiguous retainer language. No platform theater. If the first project works, then we decide what
-            deserves the next phase.
+            We start by finding the part of the business that is costing the most time, money, or missed opportunity.
+            Then we agree on the deliverable, build it, and measure whether it helped.
           </p>
           <p className="mt-4 leading-7 text-[var(--text-muted)]">
-            No NDAs required to start the conversation. No contracts until you see the scope document.
+            No vague retainer talk. No unnecessary complexity. If the first project works, then we decide what deserves
+            a second phase.
           </p>
         </div>
 
@@ -132,7 +132,8 @@ export default function ServicesPage() {
             <p className="eyebrow text-[var(--text-muted)]">Workflow Architecture</p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">Fix the handoffs first.</h2>
             <p className="mt-4 text-lg leading-8 text-[var(--text-muted)]">
-              Workflow architecture means turning a fragile process into a repeatable one. Intake, assignment, reminders, approvals, follow-up, and reporting should move in a documented sequence instead of depending on memory.
+              This is about taking a messy process and making it repeatable. Intake, assignment, reminders, approvals,
+              follow-up, and reporting should not depend on memory or whoever happens to be available.
             </p>
             <ul className="mt-6 list-disc space-y-3 pl-6 text-[var(--text-muted)]">
               <li>Your team is copy-pasting between tools.</li>
@@ -140,15 +141,16 @@ export default function ServicesPage() {
               <li>Onboarding takes three days of manual steps.</li>
             </ul>
             <div className="mt-6 rounded-lg bg-[var(--surface-container-low)] p-5 text-sm text-[var(--text-muted)]">
-              Output: a documented automation flow, integration map, trigger logic, and owner alerting. Best fit: Starter or Core.
+              Output: a documented workflow, the right automation, and clear owner alerting. Best fit: Starter or Core.
             </div>
           </section>
 
           <section id="leads" className="rounded-xl bg-[var(--surface-container-lowest)] p-8 shadow-[var(--shadow-card)]">
-            <p className="eyebrow text-[var(--text-muted)]">AI Lead Synthesis</p>
-            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">Respond before the lead decays.</h2>
+            <p className="eyebrow text-[var(--text-muted)]">Lead Response Systems</p>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">Respond while the lead still cares.</h2>
             <p className="mt-4 text-lg leading-8 text-[var(--text-muted)]">
-              AI lead synthesis means your intake, scoring, routing, and initial response happen immediately. Human judgment stays where it matters; the repetitive part gets handled automatically.
+              This means your intake, routing, alerts, and first response happen faster and more consistently. Human
+              judgment stays where it matters. The repetitive part gets handled by the system.
             </p>
             <ul className="mt-6 list-disc space-y-3 pl-6 text-[var(--text-muted)]">
               <li>You are paying for leads but replying four hours later.</li>
@@ -156,7 +158,7 @@ export default function ServicesPage() {
               <li>You cannot tell which channel produces revenue.</li>
             </ul>
             <div className="mt-6 rounded-lg bg-[var(--surface-container-low)] p-5 text-sm text-[var(--text-muted)]">
-              Output: a scoring model, CRM routing workflow, automated acknowledgment sequence, and reporting. Best fit: Starter or Core.
+              Output: a routing workflow, faster response path, and reporting that shows what is being handled. Best fit: Starter or Core.
             </div>
           </section>
 
@@ -164,7 +166,8 @@ export default function ServicesPage() {
             <p className="eyebrow text-[var(--text-muted)]">Custom Business Intelligence</p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">One source of truth instead of four dashboards.</h2>
             <p className="mt-4 text-lg leading-8 text-[var(--text-muted)]">
-              Custom business intelligence means surfacing the metrics that drive decisions without making your team reconcile screenshots or exports every week.
+              We build reporting that helps you answer practical questions quickly instead of piecing together exports,
+              screenshots, and different versions of the truth.
             </p>
             <ul className="mt-6 list-disc space-y-3 pl-6 text-[var(--text-muted)]">
               <li>You check four dashboards every morning.</li>
@@ -172,7 +175,7 @@ export default function ServicesPage() {
               <li>You cannot answer what happened last quarter without asking three people.</li>
             </ul>
             <div className="mt-6 rounded-lg bg-[var(--surface-container-low)] p-5 text-sm text-[var(--text-muted)]">
-              Output: a shared dashboard, reporting definitions, and runbook for how the data is generated. Best fit: Core or Infrastructure.
+              Output: a shared dashboard, agreed reporting definitions, and a simple runbook for how the data is produced. Best fit: Core or Infrastructure.
             </div>
           </section>
         </div>

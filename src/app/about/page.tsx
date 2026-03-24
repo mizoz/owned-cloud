@@ -20,7 +20,7 @@ export default function AboutPage() {
       <section className="hero-shell px-6 pb-16 pt-24 lg:px-12">
         <Container className="max-w-7xl">
           <SectionHeading
-            eyebrow="Architectural Intelligence"
+            eyebrow="About Owned Cloud"
             title="A Calgary operator building systems with business consequences in mind."
             description="Owned Cloud sits between an automation partner and a technical operator. The work starts with execution, not theory."
           />
@@ -35,19 +35,15 @@ export default function AboutPage() {
                 <p className="eyebrow text-[var(--text-muted)]">Founder</p>
                 <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">Ahmed</h2>
                 <p className="mt-4 text-[var(--text-muted)]">
-                  Digital systems architect working at the intersection of automation, infrastructure, and small business operations in Calgary. The focus is not abstract transformation. It is building systems that remove measurable friction.
+                  Calgary-based systems operator working with service teams, real estate operators, clinics, and trades. The focus is not abstract transformation. It is building systems that remove measurable friction.
                 </p>
               </div>
 
               <p>
-                The model is simple: start with a clear operational problem, fix it quickly, and build trust from
-                a working result. That might be lead follow-up, appointment booking, internal handoffs, or owned
-                infrastructure that gives you more control over your data and costs.
+                The model is simple: start with a clear operational problem, fix it quickly, and build trust from a working result. That might be lead follow-up, appointment booking, internal handoffs, or infrastructure that gives you more control over your data and costs.
               </p>
               <p>
-                We are Calgary-focused on purpose. Local context matters when you are dealing with service teams,
-                real estate operators, clinics, trades, and other small businesses that need practical systems,
-                not software theater.
+                We are Calgary-focused on purpose. Local context matters when you are dealing with teams that need practical systems, not software theater.
               </p>
             </div>
           </div>
