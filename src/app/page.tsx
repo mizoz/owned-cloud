@@ -56,7 +56,7 @@ const pillars = [
 const sovereigntyPoints = [
   "End-to-end encryption",
   "Zero-knowledge storage",
-  "Local private nodes",
+  "Canadian data residency",
 ];
 
 const trustSignals = [
@@ -216,13 +216,13 @@ export default async function Home() {
                 </span>
               </div>
               <h3 className="text-4xl font-extrabold leading-tight tracking-tight">
-                Your Intelligence.
+                Your Data.
                 <br />
-                Your Cloud.
+                Your Infrastructure.
               </h3>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-300">
-                In the age of AI, data is your most valuable asset. We build private, sovereign
-                environments where your data remains exclusively yours.
+                We build private environments where your business data stays on infrastructure you control,
+                not locked inside a vendor&apos;s platform.
               </p>
               <ul className="mt-8 space-y-4">
                 {sovereigntyPoints.map((point) => (
@@ -247,7 +247,7 @@ export default async function Home() {
             </h2>
             <p className="text-lg leading-relaxed text-[var(--text-muted)]">
               When it makes sense, we build on infrastructure you control instead of trapping the business inside one
-              vendor's pricing model, product roadmap, or data rules. That means more clarity, more portability, and
+              vendor&apos;s pricing model, product roadmap, or data rules. That means more clarity, more portability, and
               fewer surprises later.
             </p>
 
@@ -255,13 +255,13 @@ export default async function Home() {
               <div>
                 <p className="text-5xl font-black text-[var(--secondary)]">100%</p>
                 <p className="mt-1 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                  More Control
+                  Data Stays on Your Infrastructure
                 </p>
               </div>
               <div>
-                <p className="text-5xl font-black text-[var(--secondary)]">0</p>
+                <p className="text-5xl font-black text-[var(--secondary)]">$0</p>
                 <p className="mt-1 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--text-muted)]">
-                  Forced Lock-In
+                  Recurring Platform Fees to Us
                 </p>
               </div>
             </div>
@@ -331,7 +331,7 @@ export default async function Home() {
           </h2>
           <p className="mx-auto mt-8 max-w-2xl text-lg text-slate-300">
             We work with Calgary and Alberta businesses that want a practical partner, not another software pitch.
-            We also work well with agencies, consultants, and referral partners who need a technical operator they can trust.
+            We also work with agencies, consultants, and referral partners who need a reliable technical operator.
           </p>
 
           <div className="mt-12 flex flex-col items-center justify-center gap-12 md:flex-row">
@@ -343,9 +343,9 @@ export default async function Home() {
             </div>
             <div className="hidden h-16 w-px bg-slate-700 md:block" />
             <div className="text-left">
-              <p className="text-5xl font-black text-emerald-400">Calgary</p>
+              <p className="text-5xl font-black text-emerald-400">5-7 days</p>
               <p className="mt-2 text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-slate-400">
-                Focused Delivery Region
+                Typical First Build Delivery
               </p>
             </div>
           </div>

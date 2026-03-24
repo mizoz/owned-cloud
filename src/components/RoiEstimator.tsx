@@ -11,16 +11,16 @@ const taskLoadOptions = [
 ] as const;
 
 export function RoiEstimator() {
-  const [teamSize, setTeamSize] = useState(12);
-  const [manualTaskLoad, setManualTaskLoad] = useState<(typeof taskLoadOptions)[number]["value"]>(65);
+  const [teamSize, setTeamSize] = useState(5);
+  const [manualTaskLoad, setManualTaskLoad] = useState<(typeof taskLoadOptions)[number]["value"]>(45);
   const teamSizeInputId = "roi-team-size";
 
   const metrics = useMemo(() => {
     const hoursSaved = teamSize * (manualTaskLoad / 100) * 160 * 0.4;
-    const leadVelocityPercent = Math.min(200, teamSize * 12);
+    const responseSpeedPercent = Math.min(200, teamSize * 12);
     return {
-      hoursSaved: hoursSaved.toFixed(1),
-      leadVelocityPercent,
+      hoursSaved: hoursSaved.toFixed(0),
+      responseSpeedPercent,
     };
   }, [manualTaskLoad, teamSize]);
 
@@ -28,17 +28,14 @@ export function RoiEstimator() {
     <div className="relative z-10 rounded-xl bg-[var(--surface-container-high)] p-1 shadow-[var(--shadow-soft)]">
       <div className="rounded-lg bg-[var(--surface-container-lowest)] p-8">
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold text-[var(--primary)]">Live ROI Estimator</h3>
-          <span className="rounded bg-[var(--secondary-soft)] px-2 py-1 text-[0.6rem] font-extrabold uppercase tracking-[0.14em] text-[var(--secondary)]">
-            Functional
-          </span>
+          <h3 className="text-lg font-bold text-[var(--primary)]">Estimate Your Time Savings</h3>
         </div>
 
         <div className="mt-6 space-y-6">
           <div>
             <div className="mb-2 flex justify-between text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
               <label htmlFor={teamSizeInputId}>Team Size</label>
-              <span className="text-[var(--primary)]">{teamSize} Members</span>
+              <span className="text-[var(--primary)]">{teamSize} {teamSize === 1 ? "Person" : "People"}</span>
             </div>
             <input
               id={teamSizeInputId}
@@ -52,14 +49,14 @@ export function RoiEstimator() {
           </div>
 
           <fieldset>
-            <legend className="sr-only">Manual Task Load</legend>
+            <legend className="sr-only">How much of your team&apos;s day is manual or repetitive work?</legend>
             <div className="mb-2 flex justify-between text-[0.68rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              <span>Manual Task Load</span>
+              <span>Manual Work Load</span>
               <span className="text-[var(--primary)]">
                 {taskLoadOptions.find((option) => option.value === manualTaskLoad)?.label} ({manualTaskLoad}%)
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Manual task load">
+            <div className="grid grid-cols-2 gap-2" role="radiogroup" aria-label="Manual work load">
               {taskLoadOptions.map((option) => (
                 <button
                   key={option.value}
@@ -84,7 +81,7 @@ export function RoiEstimator() {
         <div className="mt-8 grid grid-cols-2 gap-4">
           <div className="rounded-lg border-b-2 border-[var(--secondary-soft)] bg-[var(--surface-container-low)] p-4">
             <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              Hours Saved/Mo
+              Hours Saved / Month
             </p>
             <p className="mt-1 text-4xl font-extrabold tracking-tight text-[var(--secondary)]">
               {metrics.hoursSaved}
@@ -93,15 +90,19 @@ export function RoiEstimator() {
 
           <div className="rounded-lg border-b-2 border-[var(--primary-strong)] bg-[var(--surface-container-low)] p-4">
             <p className="text-[0.62rem] font-extrabold uppercase tracking-[0.14em] text-[var(--text-muted)]">
-              Lead Velocity
+              Faster Lead Response
             </p>
             <p className="mt-1 text-4xl font-extrabold tracking-tight text-[var(--primary)]">
-              +{metrics.leadVelocityPercent}%
+              +{metrics.responseSpeedPercent}%
             </p>
           </div>
         </div>
 
-        <div className="mt-6 border-t border-[var(--outline)] pt-4">
+        <p className="mt-4 text-[0.65rem] text-[var(--text-muted)]/70">
+          Estimates based on industry averages. Your actual numbers may vary.
+        </p>
+
+        <div className="mt-4 border-t border-[var(--outline)] pt-4">
           <Link href="/contact" className="text-sm font-semibold text-[var(--primary-strong)]">
             Want the real number? Book your free audit →
           </Link>
