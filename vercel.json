@@ -1,8 +1,9 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/(.*)",
-      "destination": "https://getownedcloud.com/$1"
+      "destination": "https://getownedcloud.com/$1",
+      "permanent": true
     }
   ]
 }
