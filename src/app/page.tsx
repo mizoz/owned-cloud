@@ -22,12 +22,7 @@ export const metadata = buildMetadata({
   ],
 });
 
-const trustIndustries = [
-  { icon: "apartment", label: "Real Estate" },
-  { icon: "construction", label: "Trades" },
-  { icon: "medical_services", label: "Clinics" },
-  { icon: "briefcase", label: "Professional Services" },
-];
+const trustIndustries = ["Real Estate", "Trades", "Clinics", "Professional Services"];
 
 const pillars = [
   {
@@ -161,10 +156,10 @@ export default async function Home() {
             Trusted by Calgary businesses in real estate, trades, clinics, and professional services
           </p>
           <div className="flex flex-wrap gap-4">
-            {trustIndustries.map((item) => (
-              <div key={item.label} className="flex items-center gap-2 rounded-full bg-[var(--surface-container-low)] px-4 py-2 text-sm text-[var(--primary)]">
-                <span className="material-symbols-outlined text-base">{item.icon}</span>
-                {item.label}
+            {trustIndustries.map((label) => (
+              <div key={label} className="flex items-center gap-2 rounded-full bg-[var(--surface-container-low)] px-4 py-2 text-sm text-[var(--primary)]">
+                <span className="h-2.5 w-2.5 rounded-full bg-[var(--secondary)]" aria-hidden="true" />
+                {label}
               </div>
             ))}
           </div>
