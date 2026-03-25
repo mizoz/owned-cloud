@@ -22,11 +22,15 @@ We use Next.js for public sites, dashboards, client portals, and app interfaces.
 
 For clients, this matters because one frontend foundation can support multiple parts of the business instead of creating a different stack for every project.
 
+It also means the public site and the operational interface do not have to feel like unrelated systems. When a business eventually needs a portal, reporting layer, or internal tool, the frontend foundation is already capable of carrying that work without a full stack reset.
+
 ## Data and auth: Supabase
 
 Supabase is usually the first choice for database, authentication, and API-backed application work.
 
 It gives us Postgres under the hood, which means the data layer remains understandable and portable. That matters more than the convenience features. You should be able to inspect your data model without learning a proprietary abstraction nobody asked for.
+
+That portability matters when the system becomes important. Businesses should not be forced into a black box just because the first version of the tool needed to ship quickly. A readable Postgres-backed model gives the business a much better long-term position.
 
 ## Automation: n8n
 
@@ -34,11 +38,15 @@ n8n is the workflow engine because it is self-hostable, flexible, and does not p
 
 This is the part of the stack that often becomes business-critical fastest. Intake, notifications, assignment, reporting triggers, reminders, and sync logic all belong in a workflow layer that the business can control.
 
+That control matters not only for cost, but for visibility. If the workflow logic is central to how the business operates, the business should be able to inspect it, document it, and change it without asking permission from a vendor roadmap.
+
 ## Networking: Cloudflare and Tailscale
 
 Cloudflare handles DNS, secure public exposure, and network protection. Tailscale handles private access paths for internal services and administrative work.
 
 This combination lets us keep sensitive systems off the open internet while still making the right interfaces available where they need to be.
+
+That reduces the usual tradeoff between access and exposure. Teams can reach what they need without turning every internal tool into a publicly reachable surface.
 
 ## Infrastructure: Docker, Hetzner, Dokku
 
@@ -46,11 +54,15 @@ Docker is the default packaging layer because consistent environments matter. He
 
 Again, the theme is practicality. Not novelty.
 
+This is one of the reasons the stack stays understandable. The goal is not to impress another engineer with architectural complexity. The goal is to give the business an environment that can be explained, reproduced, and supported without ceremony.
+
 ## Monitoring and support layers
 
 Plausible for privacy-friendly analytics. Glitchtip for error monitoring. Stalwart or Postal for email infrastructure when the project needs ownership at that layer. Tooljet or custom dashboards when internal visibility matters.
 
 The job is not to maximize the number of tools. It is to keep the stack legible.
+
+That legibility becomes a real asset during handoff. A business should be able to understand where monitoring lives, where alerts come from, and how reporting is generated without needing a private decoder ring.
 
 ## Why this stack works for small business
 
@@ -69,6 +81,8 @@ This stack is not the only possible answer. It is the one we use because the tra
 ## The actual advantage
 
 The advantage is not that the stack is “modern.” The advantage is that it keeps you in a position where you can understand what is running, migrate when needed, and avoid building the business on top of tools you cannot leave.
+
+That matters even more for smaller teams because they do not have spare operational capacity. The architecture has to reduce friction, not create a second job for whoever happens to be most technical.
 
 That is why we default to open-source and self-hostable components where they make sense. Not because hosted tools are bad, but because business-critical systems should not be accidental rentals if they do not have to be.
 
