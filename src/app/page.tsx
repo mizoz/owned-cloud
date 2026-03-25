@@ -10,7 +10,7 @@ import { buildMetadata } from "@/lib/seo";
 import { serviceAnchors, siteConfig } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Owned Cloud · Calgary Business Automation & Private Cloud",
+  title: "Owned Cloud · Calgary Business Automation & Systems",
   description:
     "We help Calgary businesses reduce manual work, improve follow-up, and build systems they can actually control.",
   path: "/",
@@ -90,7 +90,7 @@ export default async function Home() {
           "@id": `${siteConfig.url}#localbusiness`,
           name: "Owned Cloud",
           legalName: siteConfig.legalName,
-          description: "Calgary-based business automation and private cloud consultancy",
+          description: "Calgary-based business automation and systems consultancy",
           url: siteConfig.url,
           email: siteConfig.email,
           telephone: siteConfig.phone || undefined,
@@ -120,9 +120,9 @@ export default async function Home() {
                 We help businesses run with less manual work and better systems.
               </h1>
               <p className="max-w-xl text-lg leading-relaxed text-[var(--text-muted)]">
-                If leads are being missed, admin work is repeated, or your team is juggling too many tools, we help fix
-                the process. That can mean automation, reporting, client portals, or private infrastructure, depending
-                on what the business actually needs.
+                If leads are being missed, admin work is repeated, or your team is juggling too many tools, we fix the
+                handoffs behind the problem. That can mean automation, reporting, client portals, or infrastructure you
+                control when the business has outgrown rented systems.
               </p>
             </div>
 
@@ -175,11 +175,10 @@ export default async function Home() {
         <Container className="max-w-7xl">
           <div className="mb-16 max-w-2xl">
             <h2 className="text-4xl font-extrabold tracking-tight text-[var(--primary)]">
-              What we actually help with
+              Where we help first
             </h2>
             <p className="mt-4 text-lg text-[var(--text-muted)]">
-              We do not sell vague transformation language. We fix broken handoffs, slow follow-up, weak reporting, and
-              the infrastructure behind those problems.
+              We fix broken handoffs, slow follow-up, weak reporting, and the operating friction behind those issues.
             </p>
           </div>
 
@@ -221,8 +220,8 @@ export default async function Home() {
                 Your Cloud.
               </h3>
               <p className="mt-6 max-w-md text-lg leading-relaxed text-slate-300">
-                In the age of AI, data is your most valuable asset. We build private, sovereign
-                environments where your data remains exclusively yours.
+                When data matters, the architecture matters too. We build private environments where your operating
+                data stays visible, portable, and under your control.
               </p>
               <ul className="mt-8 space-y-4">
                 {sovereigntyPoints.map((point) => (

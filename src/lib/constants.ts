@@ -7,7 +7,7 @@ export const siteConfig = {
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://owned-cloud.com",
   domain: "owned-cloud.com",
   email: process.env.NOTIFICATION_EMAIL || "hello@owned-cloud.com",
-  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "",
+  phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "(587) 288-3176",
   location: "Calgary, Alberta",
   serviceRegion: "Calgary and surrounding Alberta businesses",
   priceRange: "$800-$5000+",

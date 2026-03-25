@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "About · Owned Cloud Calgary",
-  description: "About Ahmed and the operating principles behind Owned Cloud’s Calgary-based automation and private cloud practice.",
+  description: "About Ahmed and the operating principles behind Owned Cloud’s Calgary-based automation and systems practice.",
   path: "/about",
 });
 
@@ -22,7 +22,7 @@ export default function AboutPage() {
           <SectionHeading
             eyebrow="About Owned Cloud"
             title="A Calgary operator building systems with business consequences in mind."
-            description="Owned Cloud sits between an automation partner and a technical operator. The work starts with execution, not theory."
+            description="Owned Cloud sits between an automation partner and a technical operator. The work starts with execution, not theory, and expands only when the first fix earns it."
           />
         </Container>
       </section>

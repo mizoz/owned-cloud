@@ -9,7 +9,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Case Studies · Owned Cloud Calgary",
-  description: "Realistic implementation case studies for real estate, trades, and clinics using Owned Cloud systems.",
+  description: "Implementation scenarios and delivery summaries for real estate, trades, and clinics using Owned Cloud systems.",
   path: "/case-studies",
 });
 
@@ -34,7 +34,7 @@ export default async function CaseStudiesPage({
           <SectionHeading
             eyebrow="Case Studies"
             title="Work that maps directly to time saved, cost reduced, or response speed improved."
-            description="If you want to know what Owned Cloud actually builds, start here."
+            description="Representative delivery scenarios and implementation summaries that show the kinds of systems Owned Cloud builds."
           />
         </Container>
       </section>

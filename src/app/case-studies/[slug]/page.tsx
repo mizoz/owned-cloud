@@ -79,6 +79,17 @@ export default async function CaseStudyPage({ params }: { params: Promise<{ slug
             </p>
           </div>
 
+          <div className="mt-6 rounded-xl border border-[var(--outline)] bg-white/80 p-5">
+            <p className="text-[0.68rem] font-extrabold uppercase tracking-[0.16em] text-[var(--text-muted)]">
+              Representative Scenario
+            </p>
+            <p className="mt-2 text-sm leading-7 text-[var(--text-muted)]">
+              This page is a representative implementation summary based on the kinds of systems Owned Cloud scopes and
+              builds. It is intended to show delivery approach, architecture choices, and likely outcomes without
+              exposing private client details.
+            </p>
+          </div>
+
           <div className="mt-10">{content}</div>
 
           <div className="mt-14 rounded-xl bg-slate-950 p-8 text-white">

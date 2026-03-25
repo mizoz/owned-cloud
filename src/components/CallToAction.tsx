@@ -14,7 +14,7 @@ export function CallToAction() {
           Start with one business problem worth fixing now.
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-          We help you choose the right first fix, build it properly, and leave you with something your team can actually use.
+          We help you choose the right first fix, scope it clearly, and build something your team can keep using after handoff.
         </p>
         <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
           <TrackedLink
