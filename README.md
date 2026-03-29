@@ -66,14 +66,14 @@ git push origin main  # Vercel auto-deploys
 
 ---
 
-## 📊 Status (2026-03-24)
+## 📊 Status (2026-03-29)
 
 | Site | Status | URL |
 |------|--------|-----|
 | **owned-cloud.com** | ✅ Live | https://owned-cloud.com |
 | **getownedcloud.com** | ✅ Live | https://getownedcloud.com |
-| **zalastack.net** | 🟡 80% (NOC dashboard) | https://zalastack.net |
-| **ownedvault.com** | ⏳ Placeholder | https://ownedvault.com |
+| **zalastack.com** | ✅ Parent lane (core network) | https://zalastack.com |
+| **ownedvault.com** | ⏳ Placeholder / client lane | https://ownedvault.com |
 
 ---
 

@@ -8,14 +8,14 @@ export const siteConfig = {
     "Founder-led business automation and operating systems for Calgary service businesses that need faster follow-up, cleaner workflows, and clearer reporting.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://owned-cloud.com",
   domain: "owned-cloud.com",
-  email: process.env.NOTIFICATION_EMAIL || "hello@owned-cloud.com",
+  email: process.env.NEXT_PUBLIC_EMAIL || process.env.NOTIFICATION_EMAIL || "hello@owned-cloud.com",
   phone: process.env.NEXT_PUBLIC_BUSINESS_PHONE || "(587) 288-3176",
   location: "Calgary, Alberta",
   serviceRegion: "Calgary and surrounding Alberta businesses",
   priceRange: "$800-$5000+",
-  calLink: process.env.NEXT_PUBLIC_CAL_LINK || "ahmed-zalabany-stil6d/quick-chat",
+  calLink: process.env.NEXT_PUBLIC_CAL_LINK || "ahmed-zalabany-stil6d/owned-cloud-intake",
   bookingUrl:
-    process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/ahmed-zalabany-stil6d/quick-chat",
+    process.env.NEXT_PUBLIC_BOOKING_URL || "https://cal.com/ahmed-zalabany-stil6d/owned-cloud-intake",
   supportPromise: "We respond to all inquiries within 1 business day.",
   linkedinUrl:
     process.env.NEXT_PUBLIC_LINKEDIN_URL || "https://www.linkedin.com/in/ahmedmahmoudyyc/",
