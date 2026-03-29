@@ -5,7 +5,7 @@ import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/lib/constants";
 
 export const metadata = buildMetadata({
-  title: "Privacy Policy · Owned Cloud",
+  title: "Privacy Policy | Owned Cloud",
   description: "PIPA-aligned privacy policy for Owned Cloud.",
   path: "/privacy",
 });
@@ -19,7 +19,10 @@ export default function PrivacyPage() {
         <div className="mt-10 space-y-8 text-lg leading-8 text-[var(--text-muted)]">
           <section>
             <h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Who we are</h2>
-            <p className="mt-3">Owned Cloud is operated by ZalaStack in Calgary, Alberta. We provide automation consulting, workflow design, and private infrastructure services.</p>
+            <p className="mt-3">
+              Owned Cloud is operated by ZalaStack in Calgary, Alberta. We provide automation consulting, workflow
+              design, reporting systems, and selective private infrastructure services.
+            </p>
           </section>
           <section>
             <h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">What we collect</h2>
@@ -35,13 +38,13 @@ export default function PrivacyPage() {
           </section>
           <section>
             <h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Your rights under PIPA</h2>
-            <p className="mt-3">Under Alberta’s Personal Information Protection Act, you can request access to your personal information, ask for corrections, and request deletion where permitted by law.</p>
+            <p className="mt-3">Under Alberta's Personal Information Protection Act, you can request access to your personal information, ask for corrections, and request deletion where permitted by law.</p>
           </section>
           <section>
             <h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Contact</h2>
             <p className="mt-3">For privacy inquiries, email {siteConfig.email}.</p>
           </section>
-          <p className="text-sm">Last updated: March 23, 2026</p>
+          <p className="text-sm">Last updated: March 29, 2026</p>
         </div>
       </Container>
       <SiteFooter />

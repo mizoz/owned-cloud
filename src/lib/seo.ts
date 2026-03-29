@@ -28,7 +28,9 @@ export function buildMetadata({
   const imageUrl = absoluteUrl(image);
 
   return {
-    title,
+    title: {
+      absolute: title,
+    },
     description,
     keywords,
     alternates: {

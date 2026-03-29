@@ -19,12 +19,12 @@ const body = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Owned Cloud · Calgary Business Automation & Private Cloud",
+    default: "Owned Cloud | Calgary Automation & Business Systems",
     template: "%s | Owned Cloud",
   },
   description: siteConfig.description,
   openGraph: {
-    title: "Owned Cloud · Calgary Business Automation & Private Cloud",
+    title: "Owned Cloud | Calgary Automation & Business Systems",
     description: siteConfig.description,
     url: siteConfig.url,
     siteName: siteConfig.name,
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Owned Cloud · Calgary Business Automation & Private Cloud",
+    title: "Owned Cloud | Calgary Automation & Business Systems",
     description: siteConfig.description,
     images: ["/opengraph-image"],
   },

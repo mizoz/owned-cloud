@@ -6,7 +6,7 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "FAQ · Owned Cloud Calgary",
-  description: "Frequently asked questions about Owned Cloud packages, delivery, security, support, and data sovereignty.",
+  description: "Frequently asked questions about Owned Cloud delivery, support, hosting choices, and engagement scope.",
   path: "/faq",
 });
 
@@ -16,9 +16,15 @@ const faqs = [
   ["What if I already use Zapier or Make?", "We can work with them or migrate you to n8n when ownership and cost control matter more."],
   ["Is my data safe?", "Yes. We build on infrastructure you control, with encryption in transit and at rest where appropriate."],
   ["Do you work with businesses outside Calgary?", "Calgary is the main focus, but remote automation and infrastructure work is possible."],
-  ["What does data sovereignty mean?", "You own your data. It lives in systems and jurisdictions you choose, not in a black box you rent."],
+  [
+    "What if I need more control over data or hosting?",
+    "We scope around the level of control you need. That can mean a practical hosted setup, or private infrastructure when the project justifies it.",
+  ],
   ["Can I see an example of your work?", "Yes. Start with the case studies page."],
-  ["What is included in the free 15-minute audit?", "A focused conversation about the biggest operational bottleneck and what the first engagement would look like."],
+  [
+    "What is included in the free systems audit?",
+    "A focused conversation about the biggest operational bottleneck and what the first engagement would look like.",
+  ],
   ["Do you offer ongoing support?", "Yes. Starter includes a 7-day handoff window, Core includes 60 days, and Infrastructure includes quarterly reviews."],
   ["Why open-source tools?", "Lower long-term cost, less lock-in, more control, and the ability to customize without vendor permission."],
   ["How is this different from hiring a freelance developer?", "You get scoped work, implementation, documentation, and a support model rather than code with no operating context."],

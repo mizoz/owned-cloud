@@ -163,19 +163,21 @@ export default function ServicesPage() {
           </section>
 
           <section id="intelligence" className="rounded-xl bg-[var(--surface-container-lowest)] p-8 shadow-[var(--shadow-card)]">
-            <p className="eyebrow text-[var(--text-muted)]">Custom Business Intelligence</p>
+            <p className="eyebrow text-[var(--text-muted)]">Reporting + Portals</p>
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-[var(--primary)]">One source of truth instead of four dashboards.</h2>
             <p className="mt-4 text-lg leading-8 text-[var(--text-muted)]">
-              We build reporting that helps you answer practical questions quickly instead of piecing together exports,
-              screenshots, and different versions of the truth.
+              We build reporting and shared portals that help owners, staff, or clients answer practical questions
+              quickly instead of piecing together exports, screenshots, and different versions of the truth.
             </p>
             <ul className="mt-6 list-disc space-y-3 pl-6 text-[var(--text-muted)]">
               <li>You check four dashboards every morning.</li>
               <li>Your reports are screenshots in Slack.</li>
+              <li>Clients or staff still email for updates that should already be visible.</li>
               <li>You cannot answer what happened last quarter without asking three people.</li>
             </ul>
             <div className="mt-6 rounded-lg bg-[var(--surface-container-low)] p-5 text-sm text-[var(--text-muted)]">
-              Output: a shared dashboard, agreed reporting definitions, and a simple runbook for how the data is produced. Best fit: Core or Infrastructure.
+              Output: a shared dashboard or portal, agreed reporting definitions, and a simple runbook for how the
+              data is produced. Best fit: Core or Infrastructure.
             </div>
           </section>
         </div>

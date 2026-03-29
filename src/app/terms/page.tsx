@@ -16,7 +16,7 @@ export default function TermsPage() {
       <Container className="max-w-4xl py-16">
         <h1 className="text-5xl font-extrabold tracking-tight text-[var(--primary)]">Terms of Service</h1>
         <div className="mt-10 space-y-8 text-lg leading-8 text-[var(--text-muted)]">
-          <section><h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Services</h2><p className="mt-3">Owned Cloud provides automation consulting, workflow design, dashboard implementation, and private infrastructure deployment.</p></section>
+          <section><h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Services</h2><p className="mt-3">Owned Cloud provides automation consulting, workflow design, dashboard and portal implementation, and selective infrastructure deployment.</p></section>
           <section><h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Engagement model</h2><p className="mt-3">All work is scoped through a written scope document before payment. No retainers apply unless explicitly agreed in writing.</p></section>
           <section><h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Payment</h2><p className="mt-3">Starter engagements are paid in full before work begins. Core engagements are 50% upfront and 50% on delivery. Infrastructure projects follow the payment terms in the scope document.</p></section>
           <section><h2 className="text-2xl font-extrabold tracking-tight text-[var(--primary)]">Intellectual property</h2><p className="mt-3">Upon final payment, the client owns the project deliverables, including workflows, dashboards, configuration, and documentation, unless a third-party license says otherwise.</p></section>

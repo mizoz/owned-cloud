@@ -28,7 +28,7 @@ export function BrandMark({
             light ? "text-slate-400" : "text-[var(--text-muted)]"
           }`}
         >
-          Own Your Infrastructure
+          Automation & Systems
         </span>
       </span>
     </Link>

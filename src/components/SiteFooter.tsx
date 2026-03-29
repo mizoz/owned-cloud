@@ -1,49 +1,70 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/BrandMark";
 import { Container } from "@/components/Container";
-import { footerNavigation, siteConfig } from "@/lib/constants";
+import { footerNavigationGroups, siteConfig } from "@/lib/constants";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950 px-6 py-12 text-slate-400">
-      <Container className="flex flex-col items-center justify-between gap-8 md:flex-row">
-        <div className="flex flex-col items-center gap-3 md:items-start">
+    <footer className="border-t border-slate-800 bg-slate-950 px-6 py-14 text-slate-300">
+      <Container className="grid gap-10 lg:grid-cols-[1.15fr_1.85fr]">
+        <div className="space-y-5">
           <BrandMark compact light />
-          <p className="text-center text-xs tracking-wide md:text-left">
-            © 2026 {siteConfig.legalName}. Calgary-based business automation and private cloud systems.
+          <p className="max-w-md text-sm leading-7 text-slate-400">
+            Owned Cloud is the customer-facing automation and business systems brand led by {siteConfig.founderName} in
+            Calgary, with {siteConfig.parentBrandName} supporting deeper backend and infrastructure work when the scope
+            calls for it.
           </p>
-          <p className="text-center text-xs tracking-wide md:text-left">
-            Practical systems for service businesses, operators, and referral partners across Calgary and Alberta.
-          </p>
-          <Link href={`mailto:${siteConfig.email}`} className="text-xs text-emerald-300 hover:text-emerald-200">
-            {siteConfig.email}
+          <div className="flex flex-col gap-2 text-sm text-slate-300">
+            <a href={`mailto:${siteConfig.email}`} className="transition-colors hover:text-emerald-300">
+              {siteConfig.email}
+            </a>
+            {siteConfig.phone ? (
+              <a href={`tel:${siteConfig.phone}`} className="transition-colors hover:text-emerald-300">
+                {siteConfig.phone}
+              </a>
+            ) : null}
+            <p className="text-slate-500">{siteConfig.location}</p>
+          </div>
+          <Link href="/contact" className="btn-primary">
+            Book Your Free Audit
           </Link>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6">
-          {footerNavigation.map((link) => (
-            <Link key={link.label} href={link.href} className="text-xs tracking-wide transition-colors hover:text-white">
-              {link.label}
-            </Link>
+        <div className="grid gap-8 sm:grid-cols-3">
+          {footerNavigationGroups.map((group) => (
+            <div key={group.title}>
+              <p className="eyebrow text-slate-500">{group.title}</p>
+              <div className="mt-4 flex flex-col gap-3">
+                {group.links.map((link) =>
+                  "external" in link && link.external ? (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm tracking-wide text-slate-300 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      className="text-sm tracking-wide text-slate-300 transition-colors hover:text-white"
+                    >
+                      {link.label}
+                    </Link>
+                  ),
+                )}
+              </div>
+            </div>
           ))}
         </div>
+      </Container>
 
-        <div className="flex gap-3">
-          <Link
-            href="/stack"
-            aria-label="View security architecture page"
-            className="flex h-8 w-8 items-center justify-center rounded bg-slate-800 text-slate-400 transition-colors hover:text-emerald-400"
-          >
-            <span className="material-symbols-outlined text-sm">hub</span>
-          </Link>
-          <Link
-            href="/blog"
-            aria-label="Read the Owned Cloud blog"
-            className="flex h-8 w-8 items-center justify-center rounded bg-slate-800 text-slate-400 transition-colors hover:text-emerald-400"
-          >
-            <span className="material-symbols-outlined text-sm">article</span>
-          </Link>
-        </div>
+      <Container className="mt-10 flex flex-col gap-3 border-t border-slate-800 pt-6 text-xs tracking-wide text-slate-500 md:flex-row md:items-center md:justify-between">
+        <p>Copyright 2026 {siteConfig.legalName}.</p>
+        <p>Practical automation, reporting, and operating systems for Calgary service businesses.</p>
       </Container>
     </footer>
   );

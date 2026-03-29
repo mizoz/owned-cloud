@@ -11,8 +11,8 @@ import { siteConfig } from "@/lib/constants";
 import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
-  title: "Book a Free Audit · Owned Cloud Calgary",
-  description: "Send project details or book a free 15-minute audit with Owned Cloud in Calgary.",
+  title: "Book a Free Audit | Owned Cloud Calgary",
+  description: "Send project details or book a free 15-minute systems audit with Owned Cloud in Calgary.",
   path: "/contact",
 });
 
@@ -38,9 +38,9 @@ export default function ContactPage() {
       <section className="hero-shell px-6 pb-16 pt-24 lg:px-12">
         <Container className="max-w-7xl">
           <SectionHeading
-            eyebrow="Free 15-Minute Audit"
+            eyebrow="Free 15-Minute Systems Audit"
             title="Book the audit or send the operating problem."
-            description="Use the form if you want to outline the current friction in detail. Use the booking panel if you want a direct conversation."
+            description="Use the form if you want to outline the current friction in detail. Use the scheduler if you want a direct conversation with Ahmed."
           />
         </Container>
       </section>
@@ -52,15 +52,15 @@ export default function ContactPage() {
               <div>
                 <p className="eyebrow text-[var(--text-muted)]">What to expect</p>
                 <p className="mt-3 leading-7 text-[var(--text-muted)]">
-                  A short conversation about your current process, where leads or admin tasks are slipping, and
-                  whether the fixed-scope starter package is the right fit.
+                  A short conversation about where leads, admin work, or reporting are slipping and what the first
+                  practical fix should be.
                 </p>
               </div>
               <div>
                 <p className="eyebrow text-[var(--text-muted)]">Best fit</p>
                 <p className="mt-3 leading-7 text-[var(--text-muted)]">
-                  Small businesses in Calgary that want practical automation, clearer reporting, and fewer monthly
-                  tools to manage.
+                  Calgary service businesses that want practical automation, clearer reporting, and stronger internal
+                  follow-through without buying another bloated platform.
                 </p>
               </div>
               <div>
@@ -76,7 +76,17 @@ export default function ContactPage() {
           <div className="space-y-6">
             <ContactForm />
             <div className="card-panel p-5">
-              <p className="eyebrow text-[var(--text-muted)]">Book directly</p>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <p className="eyebrow text-[var(--text-muted)]">Book directly</p>
+                <a
+                  href={siteConfig.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--primary-strong)]"
+                >
+                  Open scheduler in new tab
+                </a>
+              </div>
               {publicEnv.calLink ? (
                 <div className="mt-4 h-[720px] overflow-hidden rounded-xl border border-[var(--outline)] bg-white">
                   <CalBookingEmbed calLink={publicEnv.calLink} />
@@ -122,6 +132,36 @@ export default function ContactPage() {
                 <p>
                   <span className="font-semibold text-[var(--primary)]">Response time:</span> {siteConfig.supportPromise}
                 </p>
+              </div>
+            </div>
+
+            <div className="rounded-xl bg-[var(--surface-container-low)] p-6">
+              <p className="eyebrow text-[var(--text-muted)]">Who you&apos;ll hear from</p>
+              <h2 className="mt-3 text-2xl font-extrabold tracking-tight text-[var(--primary)]">
+                {siteConfig.founderName}
+              </h2>
+              <p className="mt-4 leading-7 text-[var(--text-muted)]">
+                Founder-led delivery from Calgary. Owned Cloud handles the customer-facing automation work, with{" "}
+                {siteConfig.parentBrandName} available behind the scenes when the project needs deeper backend or
+                infrastructure support.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-3">
+                <a
+                  href={siteConfig.linkedinUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  LinkedIn
+                </a>
+                <a
+                  href={siteConfig.parentBrandUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-secondary"
+                >
+                  ZalaStack
+                </a>
               </div>
             </div>
           </div>

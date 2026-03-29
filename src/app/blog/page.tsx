@@ -9,7 +9,8 @@ import { buildMetadata } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Blog · Automation & Business Systems · Owned Cloud",
-  description: "Automation, private cloud, data sovereignty, and small business systems content written for Calgary operators.",
+  description:
+    "Automation, lead response, reporting, and operating-systems notes written for Calgary business operators.",
   path: "/blog",
 });
 
@@ -36,7 +37,7 @@ export default async function BlogPage({
           <SectionHeading
             eyebrow="Blog"
             title="Automation notes for Calgary business operators."
-            description="Clear writing on automation, data ownership, lead response, and self-hosted systems. No marketing fog."
+            description="Clear writing on workflow design, lead response, reporting, and the technical decisions behind practical systems."
           />
         </Container>
       </section>
